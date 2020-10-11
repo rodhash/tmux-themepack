@@ -31,8 +31,7 @@ set -g status-right-length 150
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour39,bg=colour240]#[fg=colour233,bg=colour39,bold]   #[fg=colour0]/ #[fg=colour2,bg=colour39]#[fg=colour233,bg=colour39,bold] #[fg=colour0]/ #[fg=colour233]#H "
 #
 # dark bg (235)
-# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
-set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
+set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
 
 
 red=colour9

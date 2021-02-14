@@ -56,8 +56,11 @@ set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F☕ #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💬  #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💾 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🔐 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🔐 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🍩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😷 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🏠 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

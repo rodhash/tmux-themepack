@@ -46,11 +46,18 @@ st=colour233
 # Window status
 # set -g window-status-format "  #I:#W#F  "
 # set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F  "
-set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F #[fg=$st,bg=$st]"
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F #[fg=$st,bg=$st]"
+set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]"
 
 # set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$dg,bg=$black]#[fg=colour81,bold] #I:#W#F #[fg=colour233,bg=black,nobold]"
-set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤔 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F☕ #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💬  #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💾 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🔐 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F ✔ #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235
@@ -60,6 +67,7 @@ set -g window-status-activity-style bg=colour233,fg=colour245
 
 # Window separator
 set -g window-status-separator ""
+# set -g window-status-current-suffix " 📌"
 
 # Window status alignment
 # set -g status-justify centre

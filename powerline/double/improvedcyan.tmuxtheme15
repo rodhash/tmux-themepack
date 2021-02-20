@@ -14,14 +14,18 @@ set -g status-interval 1
 # Basic status bar colors
 set -g status-style fg=colour240,bg=colour233
 
+
 # Left side of status bar
+# -------------------------
 set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 40
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #[fg=cyan,bold]  #[fg=cyan,nobold]#(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 
+
 # Right side of status bar
+# -------------------------
 set -g status-right-style bg=colour233,fg=colour243
 set -g status-right-length 150
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour39,bg=colour240]#[fg=colour233,bg=colour39,bold] #H "
@@ -32,7 +36,10 @@ set -g status-right-length 150
 #
 # dark bg (235)
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
-set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
+
+# Trying to free up some space --- right side
+set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
 
 
 red=colour9
@@ -43,10 +50,12 @@ st=colour233
 # set -g status-style fg=colour240,bg=$black
 
 
-# Window status
+# Window status (inactive window)
+# ---------------------------------
 # set -g window-status-format "  #I:#W#F  "
 # set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F  "
 # set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F #[fg=$st,bg=$st]"
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]"
 set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]"
 
 # set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"

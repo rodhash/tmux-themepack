@@ -1,3 +1,4 @@
+# vim: ft=tmux
 #
 # Powerline Double Cyan - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
@@ -53,7 +54,7 @@ spaceBar_middle_fg=$bar_fg
 
 
 # Status update interval
-set -g status-interval 1
+set -g status-interval 2
 
 # Basic status bar colors
 set -g status-style fg=$spaceBar_middle_fg,bg=$spaceBar_middle_bg
@@ -127,7 +128,7 @@ set -g window-status-format "#[fg=$inactive_term_arrow_fg,bg=$inactive_term_arro
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤞 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤕 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
 # set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎲 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-set -g window-status-current-format "#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] {#I} #W#F #[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#F #[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

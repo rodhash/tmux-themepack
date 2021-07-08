@@ -19,12 +19,12 @@
 
 # Sub-colors
 active_term_txt_fg=colour233
-active_term_bg=colour9
+active_term_bg=colour202
 bar_bg=colour232
 bar_fg=colour33
 inactive_term_fg=colour32
 inactive_term_bg=colour236
-active_term_back_arrow_fg=colour9
+active_term_back_arrow_fg=colour202
 
 
 # Colours

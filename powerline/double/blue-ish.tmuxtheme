@@ -21,8 +21,8 @@
 active_term_txt_fg=colour233
 active_term_bg=colour39
 bar_bg=colour232
-bar_fg=colour25
-inactive_term_fg=colour25
+bar_fg=colour27
+inactive_term_fg=colour27
 inactive_term_bg=colour236
 active_term_back_arrow_fg=colour39
 

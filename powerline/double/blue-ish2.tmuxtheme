@@ -19,7 +19,7 @@
 
 # Sub-colors
 active_term_txt_fg=colour21
-active_term_bg=colour240
+active_term_bg=colour39
 bar_bg=colour232
 bar_fg=colour242
 inactive_term_fg=colour32

@@ -25,6 +25,9 @@ bar_fg=colour27
 inactive_term_fg=colour27
 inactive_term_bg=colour236
 active_term_back_arrow_fg=colour39
+clock=colour27
+date_bg=colour238
+week_day=colour75
 
 
 # Colours
@@ -87,7 +90,8 @@ set -g status-right-length 150
 # Trying to free up some space --- right side
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
-set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=colour2,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour249,bg=colour240,bold] %a #[fg=colour233,bg=colour240]%b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+# set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour249,bg=colour240,bold] %a #[fg=colour233,bg=colour240]%b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
 
 
 red=colour9

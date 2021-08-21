@@ -122,7 +122,7 @@ st=colour233
 # set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, 🔍,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
 
 # Now adding nice glyph for bell
-set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}]#{?window_bell_flag, 📌,} #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, 🔎,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}]#{?window_bell_flag, 📌,} #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, 🔍,}#[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
 # {?window_zoomed_flag, ,🔍}
 # old
 # set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
@@ -149,7 +149,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_a
 # Adding glyph for zoomzed window
 # colour3
 # colour124
-set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,bold]#{?window_zoomed_flag, 🔎,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,bold]#{?window_zoomed_flag, 🔍,}#[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

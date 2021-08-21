@@ -111,7 +111,11 @@ st=colour233
 # set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]" */
 
 # Separator of inative terms, first fg
-set -g window-status-format "#[fg=$inactive_term_arrow_fg,bg=$inactive_term_arrow_bg]#[fg=$inactive_term_sep_fg,bg=$inactive_term_lSide_pointer_bg]#[fg=$inactive_term_fg,bg=$inactive_term_bg] #I #W#F #[fg=$inactive_term_pointer_fg,bg=$inactive_term_pointer_bg]"
+# set -g window-status-format "#[fg=$inactive_term_arrow_fg,bg=$inactive_term_arrow_bg]#[fg=$inactive_term_sep_fg,bg=$inactive_term_lSide_pointer_bg]#[fg=$inactive_term_fg,bg=$inactive_term_bg] #I #W#F #[fg=$inactive_term_pointer_fg,bg=$inactive_term_pointer_bg]"
+
+# Tweaking the Bell / Flash weird colours
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour220,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=$inactive_term_fg,bg=$inactive_term_bg] #I #W#F #[fg=$inactive_term_pointer_fg,bg=$inactive_term_pointer_bg]"
+set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}] #I #W#F #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
 
 # old
 # set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"

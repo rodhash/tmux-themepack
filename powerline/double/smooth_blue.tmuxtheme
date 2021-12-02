@@ -1,0 +1,127 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+#
+
+
+# Sub-colors
+active_term_txt_fg=colour233
+
+# Active term
+active_term_back_arrow_fg=colour33
+active_term_bg=colour33
+
+bar_bg=colour234
+bar_fg=colour242
+inactive_term_fg=colour242
+inactive_term_bg=colour236
+clock=colour27
+date_bg=colour238
+week_day=colour75
+
+
+# Colours
+active_term_pointer_bg=$active_term_bg
+active_term_pointer_fg=$bar_bg
+
+active_term_front_pointer_bg=$bar_bg
+active_term_front_pointer_fg=$active_term_bg
+
+inactive_term_arrow_fg=colour33
+inactive_term_arrow_bg=colour336
+inactive_term_pointer_fg=$inactive_term_bg
+inactive_term_pointer_bg=$bar_bg
+inactive_term_lSide_pointer_bg=$inactive_term_bg
+
+inactive_term_sep_fg=$bar_bg
+
+# Space Bar
+# + Left side Pointer Char
+# + Right side Pointer Char
+spaceBar_rSidePointer_bg=$bar_bg
+spaceBar_lSidePointer_bg=$bar_bg
+spaceBar_middle_bg=$bar_bg
+spaceBar_middle_fg=$bar_fg
+
+
+
+# Status update interval
+set -g status-interval 2
+
+# Basic status bar colors
+set -g status-style fg=$spaceBar_middle_fg,bg=$spaceBar_middle_bg
+
+
+# Left side of status bar
+# -------------------------
+set -g status-left-style bg=colour233,fg=colour243
+set -g status-left-length 40
+set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+
+
+# Right side of status bar
+# -------------------------
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+
+
+red=colour9
+black=black
+dg=colour233
+blue=colour39
+st=colour233
+
+
+
+# Window status (inactive window)
+# ---------------------------------
+# Customizing the bell icon color
+set -g window-status-format "#[fg=#{?window_bell_flag,colour234,$inactive_term_arrow_fg},bg=#{?window_bell_flag,$bar_fg,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,$bar_bg,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag, 🔊,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour33,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ⇡⇣,} #[fg=#{?window_bell_flag,$bar_bg,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+# 🔅 🔆 📌 ⛶
+set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ⇡⇣,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+# set -g window-status-current-suffix " 📌"
+
+# Window status alignment
+# set -g status-justify centre
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style bg=default,fg=colour238
+
+# Active pane border
+set -g pane-active-border-style bg=default,fg=colour39
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

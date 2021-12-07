@@ -70,7 +70,7 @@ set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 40
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #[fg=cyan,bold]  #[fg=cyan,nobold]#(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
-set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
 
 
 # Right side of status bar

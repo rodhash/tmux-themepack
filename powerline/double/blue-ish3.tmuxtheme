@@ -1,0 +1,209 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+#
+
+# Sick blue colors
+# active_term_txt_fg=colour233
+# active_term_bg=colour32
+# bar_bg=colour232
+# bar_fg=colour33
+# inactive_term_fg=colour32
+# inactive_term_bg=colour236
+
+# Sub-colors
+active_term_txt_fg=colour233
+active_term_bg=colour39
+bar_bg=colour232
+bar_fg=colour27
+inactive_term_fg=colour27
+inactive_term_bg=colour236
+active_term_back_arrow_fg=colour39
+clock=colour27
+date_bg=colour238
+week_day=colour75
+
+
+# Colours
+active_term_pointer_bg=$active_term_bg
+active_term_pointer_fg=$bar_bg
+
+active_term_front_pointer_bg=$bar_bg
+active_term_front_pointer_fg=$active_term_bg
+
+inactive_term_arrow_fg=colour33
+inactive_term_arrow_bg=colour336
+inactive_term_pointer_fg=$inactive_term_bg
+inactive_term_pointer_bg=$bar_bg
+inactive_term_lSide_pointer_bg=$inactive_term_bg
+
+inactive_term_sep_fg=$bar_bg
+
+# Space Bar
+# + Left side Pointer Char
+# + Right side Pointer Char
+spaceBar_rSidePointer_bg=$bar_bg
+spaceBar_lSidePointer_bg=$bar_bg
+spaceBar_middle_bg=$bar_bg
+spaceBar_middle_fg=$bar_fg
+
+# set -g status-style fg=colour240,bg=$black
+
+
+
+# Status update interval
+set -g status-interval 2
+
+# Basic status bar colors
+set -g status-style fg=$spaceBar_middle_fg,bg=$spaceBar_middle_bg
+
+
+# Left side of status bar
+# -------------------------
+set -g status-left-style bg=colour233,fg=colour243
+set -g status-left-length 40
+# set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+# set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #[fg=cyan,bold]  #[fg=cyan,nobold]#(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+
+
+# Right side of status bar
+# -------------------------
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour39,bg=colour240]#[fg=colour233,bg=colour39,bold] #H "
+#         🖳     "
+
+# blue bg
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour39,bg=colour240]#[fg=colour233,bg=colour39,bold]   #[fg=colour0]/ #[fg=colour2,bg=colour39]#[fg=colour233,bg=colour39,bold] #[fg=colour0]/ #[fg=colour233]#H "
+#
+# dark bg (235)
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold]   #[fg=colour9]/ #[fg=colour2,bg=colour235]#[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#H "
+
+# Trying to free up some space --- right side
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
+# set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
+# set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour249,bg=colour240,bold] %a #[fg=colour233,bg=colour240]%b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+
+
+red=colour9
+black=black
+dg=colour233
+blue=colour39
+st=colour233
+
+
+
+# Window status (inactive window)
+# ---------------------------------
+# set -g window-status-format "  #I:#W#F  "
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F  "
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F #[fg=$st,bg=$st]"
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]"
+# set -g window-status-format "#[fg=$red,bg=$st]#[fg=$st,bg=$st]#[fg=$red,bg=$st]#I:#W#F⌬ #[fg=$st,bg=$st]" */
+
+# Separator of inative terms, first fg
+# set -g window-status-format "#[fg=$inactive_term_arrow_fg,bg=$inactive_term_arrow_bg]#[fg=$inactive_term_sep_fg,bg=$inactive_term_lSide_pointer_bg]#[fg=$inactive_term_fg,bg=$inactive_term_bg] #I #W#F #[fg=$inactive_term_pointer_fg,bg=$inactive_term_pointer_bg]"
+
+# Tweaking the Bell / Flash weird colours
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour220,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=$inactive_term_fg,bg=$inactive_term_bg] #I #W#F #[fg=$inactive_term_pointer_fg,bg=$inactive_term_pointer_bg]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}] #I #W#F #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+
+# Adding a nice glyph for Zoomed window
+# FINALLY, fixed the colour bug when zoomed + bell on same window
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, 🔍,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+
+# Now adding nice glyph for bell
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour208,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}]#{?window_bell_flag, 📌,} #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, 🔍,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour208,$inactive_term_bg}]#{?window_bell_flag, 🔅,} #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#{?window_zoomed_flag, ⇡⇣,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+# UPDATED : removing the weird "orange" highligh, keeping the title same color! nice!!
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}]#{?window_bell_flag, 🔅,} #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ⇡⇣,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+# Customizing the bell icon color
+## experiment with tmux new alert color
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour240,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,colour240,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,colour240,$inactive_term_fg},bg=#{?window_bell_flag,colour240,$inactive_term_bg}]#{?window_bell_flag, 🔊,}#[fg=#{?window_bell_flag,colour240,$inactive_term_fg},bg=#{?window_bell_flag,colour39,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour240},colour236}]#[fg=#{?window_bell_flag,colour240,colour240},bg=#{?window_bell_flag,colour240,colour236}]#{?window_zoomed_flag, ⇡⇣,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,colour240,$inactive_term_pointer_bg}]"
+
+# Changing the bell icon to a more readable one, this suggest a more clear alert/update
+# .. plus changing the zoomed flag
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+set -g window-status-format "#[fg=colour232,bg=colour236]#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,colour236}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,colour236}]#[fg=colour236,bg=colour232]"
+# 🔅 🔆 📌 ⛶
+# {?window_zoomed_flag, ,🔍}
+# old
+# set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$dg,bg=$black]#[fg=colour81,bold] #I:#W#F #[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤔 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F☕ #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💬  #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💾 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🔐 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🍩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😷 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🏠 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 👀 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😵 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😭 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤬 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤨 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤞 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤕 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎲 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#F #[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+# Adding glyph for zoomzed window
+# colour3
+# colour124
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,bold]#{?window_zoomed_flag, 🔍,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour18,bold]#{?window_zoomed_flag, 穀,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour0,bold]#{?window_zoomed_flag, ⇡⇣,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ⇡⇣,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+
+# changing the zoomed flag
+# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_fg]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+# set -g window-status-current-suffix " 📌"
+
+# Window status alignment
+# set -g status-justify centre
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style bg=default,fg=colour238
+
+# Active pane border
+set -g pane-active-border-style bg=default,fg=colour39
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

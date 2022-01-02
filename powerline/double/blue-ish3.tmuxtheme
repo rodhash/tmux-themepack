@@ -138,7 +138,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_a
 
 # changing the zoomed flag
 # set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
-set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_fg]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_fg]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

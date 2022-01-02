@@ -132,39 +132,9 @@ st=colour233
 
 # Changing the bell icon to a more readable one, this suggest a more clear alert/update
 # .. plus changing the zoomed flag
-set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
-# set -g window-status-format "#[fg=colour232,bg=colour236]#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,colour236}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,colour236}]#[fg=colour236,bg=colour232]"
-# 🔅 🔆 📌 ⛶
-# {?window_zoomed_flag, ,🔍}
-# old
-# set -g window-status-current-format "#[fg=colour233,bg=black]#[fg=colour81,nobold] #I:#W#F #[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$dg,bg=$black]#[fg=colour81,bold] #I:#W#F #[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤔 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F☕ #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💬  #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 💾 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🔐 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🍩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😷 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🏠 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎩 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 👀 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😵 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 😭 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤬 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤨 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤞 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🤕 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$st,bg=$blue]#[fg=$black,nobold] #I:#W#F 🎲 #[fg=$blue,bg=$st]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#F #[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
-# Adding glyph for zoomzed window
-# colour3
-# colour124
-# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,bold]#{?window_zoomed_flag, 🔍,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour18,bold]#{?window_zoomed_flag, 穀,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour0,bold]#{?window_zoomed_flag, ⇡⇣,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
-# set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ⇡⇣,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,colour236,colour232},bg=#{?window_bell_flag,colour232,colour236}]#[fg=#{?window_bell_flag,colour236,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,colour236}]#[fg=colour236,bg=colour232]"
+set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour232,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour27,$inactive_term_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour236,colour9},colour236}]#[fg=#{?window_bell_flag,colour236,colour9},bg=#{?window_bell_flag,colour9,colour236}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour232,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
 
 # changing the zoomed flag
 # set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=$bar_bg]#[fg=$active_term_pointer_fg,bg=$active_term_pointer_bg]#[fg=$active_term_txt_fg,nobold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,} #[fg=$active_term_txt_fg,nobold]#[fg=$active_term_front_pointer_fg,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
@@ -181,7 +151,6 @@ set -g window-status-separator ""
 # set -g window-status-current-suffix " 📌"
 
 # Window status alignment
-# set -g status-justify centre
 set -g status-justify left
 
 # Pane border

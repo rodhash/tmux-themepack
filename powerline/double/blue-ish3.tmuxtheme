@@ -94,8 +94,27 @@ set -g status-right-length 150
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour249,bg=colour240,bold] %a #[fg=colour233,bg=colour240]%b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
-set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]"
+# Bkp
+# set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]"
 
+# Adding Battery and CPU plugins / monitors
+# set -g status-right "#{battery_color_bg}#[fg=#ff5f00,bg=#080808] #{battery_icon}#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]"
+# set -g status-right "#{cpu_bg_color}#[bg=#080808] #{ram_percentage} #{gpu_percentage} #{cpu_temp} #{cpu_icon} #{cpu_percentage} | #{battery_color_bg}#[fg=#ff5f00,bg=#080808] #{battery_icon}#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]"
+# set -g status-right "#{cpu_bg_color}#[fg=#9e9e9e,bg=#080808] #{gpu_percentage} #{cpu_bg_color}#[fg=#ff8700,bg=#080808]#{gpu_temp} #[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] #{ram_percentage} #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] #{cpu_percentage} #[fg=#ff8700,bg=$date_bg]#{cpu_temp} #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]#{battery_color_bg}#[fg=#ff5f00,bg=#1A1A1A] #{battery_icon}"
+set -g status-right "#{battery_color_bg}#[fg=#ff5f00,bg=#080808] #{battery_icon}#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] #{ram_percentage} #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] #{cpu_percentage} #[fg=#ff8700,bg=$date_bg]#{cpu_temp} #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold] #{cpu_bg_color}#[fg=#9e9e9e,bg=#1a1a1a]#{gpu_percentage} #{cpu_bg_color}#[fg=#ff8700,bg=#1a1a1a]#{gpu_temp}"
+
+set -g @cpu_percentage_format "%1.0f%%"
+set -g @gpu_percentage_format "%1.0f%%"
+set -g @ram_percentage_format "%1.0f%%"
+
+set -g @batt_icon_charge_tier1 ' '
+set -g @batt_icon_charge_tier2 ' '
+set -g @batt_icon_charge_tier3 ' '
+set -g @batt_icon_charge_tier4 ' '
+set -g @batt_icon_charge_tier5 ' '
+set -g @batt_icon_charge_tier6 ' '
+set -g @batt_icon_charge_tier7 ' '
+set -g @batt_icon_charge_tier8 ' '
 
 red=colour9
 black=black

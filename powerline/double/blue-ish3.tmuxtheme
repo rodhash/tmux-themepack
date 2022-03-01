@@ -70,7 +70,9 @@ set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 40
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 # set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #[fg=cyan,bold]  #[fg=cyan,nobold]#(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
-set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+# set -g status-left "#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+# set -g status-left "#[fg=colour234,bg=colour39,bold]#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I#[fg=colour8,bg=colour235,bold]╱#[fg=colour240,bg=colour235,bold]#[fg=colour27,bg=colour235,bold]#P #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
+set -g status-left "#[fg=colour234,bg=colour39,bold]#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
 
 
 # Right side of status bar
@@ -91,7 +93,8 @@ set -g status-right-length 150
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=colour240,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]/ #[fg=colour220]#h "
 # set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=colour240,bg=colour235]#[fg=colour249,bg=colour240,bold] %a #[fg=colour233,bg=colour240]%b%d #[fg=colour235,bg=colour240]#[fg=colour220,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
-set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+# set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour235,bg=$date_bg]#[fg=colour75,bg=colour235,bold] #[fg=colour233,bg=colour235,bold] #[fg=colour0]"
+set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$clock,bg=colour235] %H:%M #[fg=$date_bg,bg=colour235]#[fg=$week_day,bg=$date_bg] %a #[fg=colour233,bg=$date_bg]%b%d #[fg=colour234,bg=$date_bg]#[fg=colour75,bg=colour234,bold]"
 
 
 red=colour9

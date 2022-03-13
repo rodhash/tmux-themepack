@@ -75,7 +75,7 @@ set -g status-left-length 40
 # set -g status-left "#[fg=colour234,bg=colour39,bold]#[fg=colour233,bg=colour39,bold] #S #[fg=colour39,bg=colour240,bold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #[fg=colour33,bg=colour235,bold]#I #[fg=colour235,bg=$spaceBar_lSidePointer_bg,nobold]"
 
 # Replacing UserName by Battery + RAM percentage
-set -g status-left "#[fg=colour234,bg=colour240,bold]#[fg=colour81,bg=colour240,nobold] #S #[fg=colour240,bg=colour235,bold]#[fg=colour240,bg=colour235] #{battery_icon}#[fg=colour238,bg=colour235]╱#[fg=colour240,bg=colour235]#{ram_percentage} #[fg=colour240,bg=colour235]#[fg=colour33,bg=colour235,bold]#[fg=colour235,bg=colour237,nobold]#[fg=colour237,bg=colour232,nobold]"
+set -g status-left "#[fg=colour234,bg=colour240,bold]#[fg=colour81,bg=colour240,nobold] #S #[fg=colour240,bg=colour235,bold]#[fg=colour244,bg=colour235] #{battery_icon}#[fg=colour238,bg=colour235]╱#[fg=colour244,bg=colour235]#{ram_percentage} #[fg=colour240,bg=colour235]#[fg=colour33,bg=colour235,bold]#[fg=colour235,bg=colour237,nobold]#[fg=colour237,bg=colour232,nobold]"
 
 
 # Right side of status bar

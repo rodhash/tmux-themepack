@@ -1,0 +1,141 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+
+
+# Sub-colors
+active_term_txt_fg=colour39
+active_term_bg=colour232
+bar_bg=colour234
+bar_fg=colour27
+inactive_term_fg=colour27
+inactive_term_bg=colour232
+active_term_back_arrow_fg=colour39
+clock=colour27
+date_bg=colour238
+week_day=colour75
+
+
+# Colours
+blue=colour32
+black=colour232
+active_term_pointer_bg=$active_term_bg
+active_term_pointer_fg=$bar_bg
+
+active_term_front_pointer_bg=$bar_bg
+active_term_front_pointer_fg=$active_term_bg
+
+inactive_term_arrow_fg=colour33
+inactive_term_arrow_bg=colour336
+inactive_term_pointer_fg=$inactive_term_bg
+inactive_term_pointer_bg=$bar_bg
+inactive_term_lSide_pointer_bg=$inactive_term_bg
+
+inactive_term_sep_fg=$bar_bg
+
+# Space Bar
+spaceBar_rSidePointer_bg=$bar_bg
+spaceBar_lSidePointer_bg=$bar_bg
+spaceBar_middle_bg=$bar_bg
+spaceBar_middle_fg=$bar_fg
+
+
+
+# Status update interval
+set -g status-interval 2
+
+# Basic status bar colors
+set -g status-style fg=$spaceBar_middle_fg,bg=$spaceBar_middle_bg
+
+
+# Left side of status bar
+# -------------------------
+set -g status-left-style bg=colour233,fg=colour243
+set -g status-left-length 40
+
+# Replacing UserName by Battery + RAM percentage
+set -g status-left "#[fg=colour234,bg=colour232,bold]#[fg=colour69,bg=colour232,nobold] #S #[fg=colour232,bg=colour235,bold] #[fg=$blue,bg=colour235,bold]rodhash #[fg=colour235,bg=colour237,nobold]#[fg=colour237,bg=colour234,nobold]"
+
+
+# Right side of status bar
+# -------------------------
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+# Removing RAM
+set -g status-right "#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$week_day,bg=colour235]#[fg=colour232,bg=colour235]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=$week_day,bg=colour232]#[fg=colour32,bg=colour232]| #{gpu_percentage} #[fg=#6c6c6c,bg=colour232]#{gpu_temp} #[fg=#fe0000,bg=colour232] "
+
+set -g @cpu_percentage_format "%1.0f%%"
+set -g @gpu_percentage_format "%1.0f%%"
+set -g @ram_percentage_format "%2.0f%%"
+
+set -g @batt_icon_charge_tier1 ' '
+set -g @batt_icon_charge_tier2 ' '
+set -g @batt_icon_charge_tier3 ' '
+set -g @batt_icon_charge_tier4 ' '
+set -g @batt_icon_charge_tier5 ' '
+set -g @batt_icon_charge_tier6 ' '
+set -g @batt_icon_charge_tier7 ' '
+set -g @batt_icon_charge_tier8 ' '
+
+red=colour9
+# black=black
+dg=colour233
+# blue=colour39
+st=colour233
+
+
+# set -g pane-active-border-style '#{?pane_in_mode,fg=yellow,#{?synchronize-panes,fg=red,fg=green}}'
+
+# Window status (inactive window)
+# ---------------------------------
+
+# Changing the bell icon to a more readable one, this suggest a more clear alert/update
+# .. plus changing the zoomed flag
+# 241 - inative terms
+set -g window-status-format "#[fg=#{?window_bell_flag,colour232,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_sep_fg},bg=#{?window_bell_flag,colour234,$inactive_term_lSide_pointer_bg}]#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,colour241},bg=#{?window_bell_flag,colour241,$inactive_term_bg}] ○ #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,colour232,colour9},colour232}]#[fg=#{?window_bell_flag,colour232,colour9},bg=#{?window_bell_flag,colour9,colour232}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,$inactive_term_pointer_fg},bg=#{?window_bell_flag,$inactive_term_lSide_pointer_bg,$inactive_term_pointer_bg}]"
+
+# changing the zoomed flag
+set -g window-status-current-format "#[fg=$active_term_back_arrow_fg,bg=colour9]#[fg=$active_term_pointer_fg,bg=$blue]#[fg=$black,nobold] 綠#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]#[fg=$blue,bg=$blue]#[fg=$blue,bg=$active_term_front_pointer_bg]#[fg=colour233,bg=black,nobold]"
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style bg=default,fg=colour238
+
+# Active pane border
+set -g pane-active-border-style bg=default,fg=colour236
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

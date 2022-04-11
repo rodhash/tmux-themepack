@@ -109,7 +109,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,$gray,$inactive_term_arrow
 # set -g window-status-format "#[fg=$gray,bg=colour234] ○ #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]  "
 
 # changing the zoomed flag
-set -g window-status-current-format "#[fg=$active_term_fg,bg=colour234,bold] 綠#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
+set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

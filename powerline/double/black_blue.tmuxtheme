@@ -74,9 +74,13 @@ set -g status-right-length 150
 
 
 # status-right + prefix highlight
-set -g @prefix_highlight_fg 'colour196' # default is 'colour231'
+# set -g @prefix_highlight_fg 'colour196' # default is 'colour231'
+set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour234'  # default is 'colour04'
-set -g @prefix_highlight_prefix_prompt ' '
+# set -g @prefix_highlight_prefix_prompt ' '
+set -g @prefix_highlight_prefix_prompt '   '
+# set -g @prefix_highlight_prefix_prompt '   '
+# set -g @prefix_highlight_prefix_prompt ' 🔆 '
 set -g status-right "#[fg=colour9,bg=colour234]#{prefix_highlight}#[fg=colour235,bg=$spaceBar_rSidePointer_bg]#[fg=$week_day,bg=colour235]#[fg=colour232,bg=colour235]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=$week_day,bg=colour232]#[fg=colour32,bg=colour232]| #{gpu_percentage} #[fg=#6c6c6c,bg=colour232]#{gpu_temp} #[fg=#fe0000,bg=colour232] "
 
 set -g @cpu_percentage_format "%1.0f%%"

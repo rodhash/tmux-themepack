@@ -164,7 +164,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]"
 
 
-curr_bg=colour12
+curr_bg=colour27
 curr_fg=colour232
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
 set -g window-status-current-format "#[fg=$cons_bg,bg=$curr_bg,bold]#[fg=$curr_fg,bg=$curr_bg,bold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] #[fg=$curr_bg,bg=$cons_bg,bold]"

@@ -72,13 +72,18 @@ blk2_fg=colour232
 blk2_bg=colour238
 pref_fg=colour232
 pref_bg=colour208
+pref_icon=
+copy_bg=colour9
+copy_fg=colour232
+copy_icon=⏸
 
 # set -g status-right ' #{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}"#{=21:pane_title}" %H:%M %d-%b-%y'
 # set -g status-left "#[fg=colour234,bg=colour232,bold]#[fg=colour69,bg=colour232,nobold] #S #[fg=colour232,bg=colour235,bold] #[fg=$blue,bg=colour235,bold]#(whoami) #[fg=colour235,bg=colour237,nobold]#[fg=colour237,bg=colour234,nobold]"
 # set -g status-left "#[fg=colour234,bg=colour232,bold]#[fg=colour69,bg=colour232,nobold] #S #[fg=colour232,bg=colour234,bold]#[fg=colour234,bg=colour236,nobold] #[fg=$blue,bg=colour236,bold]#(whoami) #[fg=colour236,bg=colour234,nobold]"
 # set -g status-left "#[fg=$cons_bg,bg=$blk1_bg,bold]#[fg=$blk1_fg,bg=$blk1_bg,nobold] #S #[fg=colour232,bg=colour234,bold]#[fg=colour234,bg=colour236,nobold] #[fg=$blue,bg=colour236,bold]#(whoami) #[fg=colour236,bg=colour234,nobold]"
 # set -g status-left "#[fg=$cons_bg,bg=$blk1_bg,bold]#[fg=$blk1_fg,bg=$blk1_bg,nobold] #{?client_prefix,#[fg=colour202,bg=$blk1_bg,bold] ,#S} #[fg=colour232,bg=colour234,bold]#[fg=colour234,bg=colour236,nobold] #[fg=$blue,bg=colour236,bold]#(whoami) #[fg=colour236,bg=colour234,nobold]"
-set -g status-left "#[fg=#{?client_prefix,$pref_bg,$cons_bg},bg=#{?client_prefix,$pref_bg,$blk1_bg}]#[fg=#{?client_prefix,$pref_fg,$blk1_fg},bg=#{?client_prefix,$pref_bg,$blk1_bg}] #{?client_prefix, ,#S} #[fg=#{?client_prefix,$pref_bg,$blk1_bg},bg=$blk1_sep]#[fg=$blk1_sep,bg=$blk2_bg] #[fg=$blk2_fg,bg=$blk2_bg,bold]#(whoami) #[fg=$blk2_bg,bg=$cons_bg]"
+# set -g status-left "#[fg=#{?client_prefix,$pref_bg,$cons_bg},bg=#{?client_prefix,$pref_bg,$blk1_bg}]#[fg=#{?client_prefix,$pref_fg,$blk1_fg},bg=#{?client_prefix,$pref_bg,$blk1_bg}] #{?client_prefix, ,#{?pane_in_mode, ,#S}} #[fg=#{?client_prefix,$pref_bg,$blk1_bg},bg=$blk1_sep]#[fg=$blk1_sep,bg=$blk2_bg] #[fg=$blk2_fg,bg=$blk2_bg,bold]#(whoami) #[fg=$blk2_bg,bg=$cons_bg]"
+set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,$cons_bg}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,$blk1_bg}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,$blk1_fg}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,$blk1_bg}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#S}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,$blk1_bg}},bg=$blk1_sep]#[fg=$blk1_sep,bg=$blk2_bg] #[fg=$blk2_fg,bg=$blk2_bg,bold]#(whoami) #[fg=$blk2_bg,bg=$cons_bg]"
 
 
 
@@ -115,7 +120,7 @@ week_day=colour202
 month_fg=colour23
 # set -g status-right "#[fg=colour9,bg=colour234]#{prefix_highlight} #[fg=colour236,bg=colour234]#[fg=colour32,bg=colour236] #{cpu_percentage} #[fg=#6c6c6c,bg=colour236]#{cpu_temp} #[fg=colour234,bg=colour236]#[fg=colour232,bg=colour234,nobold]#[fg=colour32,bg=colour232] #{gpu_percentage} #[fg=#6c6c6c,bg=colour232]#{gpu_temp} #[fg=#fe0000,bg=colour232] "
 # set -g status-right "#[fg=$temp_icon_fg,bg=$temp_icon_bg]#{prefix_highlight} #[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg].#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] %a #[fg=$month_fg,bg=$blk3_bg]%b%d #[fg=colour234,bg=colour236]#[fg=colour232,bg=colour234,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] "
-set -g status-right "#[fg=$temp_icon_fg,bg=$temp_icon_bg]#{prefix_highlight}#[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=colour234,bg=colour236]#[fg=colour232,bg=colour234,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
+set -g status-right "#[fg=$temp_icon_fg,bg=$temp_icon_bg]#{prefix_highlight}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=colour234,bg=colour236]#[fg=colour232,bg=colour234,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
 
 set -g @cpu_percentage_format "%1.0f%%"
 set -g @gpu_percentage_format "%1.0f%%"
@@ -150,7 +155,7 @@ st=colour233
 # set -g window-status-format "#[fg=#{?window_bell_flag,$gray,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,colour234,colour234},bg=#{?window_bell_flag,colour234,colour234}]#[fg=#{?window_bell_flag,colour234,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,colour234,$inactive_term_fg},bg=#{?window_bell_flag,colour9,colour234}] ○ #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,colour234,colour9},bg=#{?window_bell_flag,colour9,colour234}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,colour234},bg=#{?window_bell_flag,colour234,colour234}]"
 
 
-inact_bg=colour236
+inact_bg=colour235
 inact_fg=colour4
 bell_fg=colour9
 # set -g window-status-format "#[fg=$gray,bg=colour234] ○ #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]  "
@@ -164,8 +169,9 @@ set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold]"
 
 
-curr_bg=colour27
-curr_fg=colour232
+
+curr_bg=colour238
+curr_fg=colour208
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
 set -g window-status-current-format "#[fg=$cons_bg,bg=$curr_bg,bold]#[fg=$curr_fg,bg=$curr_bg,bold] #I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] #[fg=$curr_bg,bg=$cons_bg,bold]"
 
@@ -185,7 +191,10 @@ set -g status-justify left
 set -g pane-border-style bg=default,fg=colour238
 
 # Active pane border
-set -g pane-active-border-style bg=default,fg=colour236
+# set -g pane-active-border-style bg=default,fg=colour236
+# set -g pane-active-border-style '#{?pane_in_mode,fg=yellow,#{?synchronize-panes,fg=red,fg=blue}}'
+# set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,colour4}'
+set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,colour4}}'
 
 # Pane number indicator
 set -g display-panes-colour colour233

@@ -193,13 +193,15 @@ set -g window-status-separator ""
 set -g status-justify left
 
 # Pane border
-set -g pane-border-style bg=default,fg=colour238
+# set -g pane-border-style bg=default,fg=colour238
+set -g pane-border-style bg=#121212,fg=colour238
 
 # Active pane border
 # set -g pane-active-border-style bg=default,fg=colour236
 # set -g pane-active-border-style '#{?pane_in_mode,fg=yellow,#{?synchronize-panes,fg=red,fg=blue}}'
 # set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,colour4}'
-set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,colour4}}'
+# set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,colour4}}'
+set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,colour4}},bg=#121212'
 
 # Pane number indicator
 set -g display-panes-colour colour233

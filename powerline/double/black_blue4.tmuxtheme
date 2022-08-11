@@ -134,11 +134,11 @@ st=colour233
 # ---------------------------------
 
 inact_bg=colour235
-inact_fg=colour88
-inactFgStyle=nobold
-bell_fg=colour9
+inact_fg=#BC1717
+inactFgStyle=bold
+bell_fg=colour13
 upArrow=
-alertIcon=
+alertIcon=
 upArrowColor=colour9
 upArrowColorWithAlert=colour9
 set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"

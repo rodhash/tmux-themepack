@@ -108,13 +108,14 @@ temp_icon_bg=colour232
 blk4_fg=colour236
 blk4_bg=colour232
 blk3_fg=colour236
-blk3_bg=colour236
-hour_fg=colour30
+blk3_bg=colour235
+hour_fg=colour27
 min_fg=colour23
 dot_fg=colour23
 week_day=colour202
 month_fg=colour23
-set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon ,}#[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$blk_right_sep,bg=colour236]#[fg=colour232,bg=$blk_right_sep,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
+# set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon ,}#[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg,bold] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$blk_right_sep,bg=colour236]#[fg=colour232,bg=$blk_right_sep,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
+set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon ,}#[fg=$blk3_bg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$task_bar,bg=$blk3_bg]#[fg=colour232,bg=$task_bar,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
 
 red=colour9
 dg=colour233

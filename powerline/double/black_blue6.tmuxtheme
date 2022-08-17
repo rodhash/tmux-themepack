@@ -147,7 +147,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?
 curr_bg=colour235
 curr_fg=colour13
 # curr_fg=#333333
-curr_icon=' '
+curr_icon=' '
 curr_icon_fg=colour13
 arrowUpActive=
 arrowUpActiveColor=colour13

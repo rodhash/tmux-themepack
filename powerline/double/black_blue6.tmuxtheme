@@ -79,7 +79,7 @@ copy_fg=colour232
 copy_icon=
 sync_bg=colour82
 sync_fg=colour232
-sync_icon=SYN
+sync_icon=
 blk_right_sep=colour232
 
 
@@ -87,7 +87,7 @@ blk_right_sep=colour232
 # set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon,#S}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},bg=$blk1_sep]#[fg=$blk1_sep,bg=$blk2_bg]#[fg=$blk2_fg,bg=$blk2_bg,bold]#[fg=$blk2_bg,bg=$cons_bg]"
 
 # left block w/ task_bar integration
-set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon,#S}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},bg=$blk1_sep]#[fg=$blk1_sep,bg=$task_bar]"
+set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,#S}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},bg=$blk1_sep]#[fg=$blk1_sep,bg=$task_bar]"
 
 
 # Right side of status bar
@@ -115,7 +115,7 @@ dot_fg=colour23
 week_day=colour202
 month_fg=colour23
 # set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon ,}#[fg=$blk3_fg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg,bold] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$blk_right_sep,bg=colour236]#[fg=colour232,bg=$blk_right_sep,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
-set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour202]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon ,}#[fg=$blk3_bg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$task_bar,bg=$blk3_bg]#[fg=colour232,bg=$task_bar,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
+set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour208]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon  ,}#[fg=$blk3_bg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$task_bar,bg=$blk3_bg]#[fg=colour232,bg=$task_bar,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
 
 red=colour9
 dg=colour233

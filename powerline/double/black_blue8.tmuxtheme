@@ -114,7 +114,7 @@ inactFgStyle=bold
 bell_fg=colour2
 upArrow=
 alertIcon=
-Noncurr_icon=' '
+Noncurr_icon=' '
 Noncurr_icon_fg=#444444
 Noncurr_icon_bg=#262626
 upArrowColor=#C20808
@@ -128,7 +128,7 @@ set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?
 curr_bg=colour235
 curr_fg=colour13
 # curr_icon=''
-curr_icon=' '
+curr_icon=' '
 curr_icon_fg=#fe0000
 # curr_icon_fg=colour13
 arrowUpActive=

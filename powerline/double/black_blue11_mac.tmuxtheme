@@ -81,10 +81,12 @@ red=colour9
 # blk1_icon=''
 # blk1_icon=''
 # blk1_icon=''
-blk1_icon=' '
+# blk1_icon=' '
 # blk1_icon=''
 # blk1_icon=''
-blk1_icon_fg=colour202
+# blk1_icon=' '
+blk1_icon=' '
+blk1_icon_fg=colour40
 set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=colour0]"
 
 

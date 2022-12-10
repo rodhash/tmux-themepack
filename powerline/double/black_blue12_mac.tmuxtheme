@@ -1,0 +1,222 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+
+
+# Colors
+active_term_txt_fg=colour39
+active_term_bg=colour232
+task_bar=#000000
+bar_bg=$task_bar
+bar_fg=colour27
+gray=colour238
+active_term_fg=colour75
+inactive_term_fg=colour59
+inactive_term_bg=colour232
+active_term_back_arrow_fg=colour39
+clock=colour27
+date_bg=colour238
+week_day=colour75
+blue=colour32
+black=colour232
+active_term_pointer_bg=$active_term_bg
+active_term_pointer_fg=$bar_bg
+active_term_front_pointer_bg=$bar_bg
+active_term_front_pointer_fg=$active_term_bg
+inactive_term_arrow_fg=colour33
+inactive_term_arrow_bg=colour336
+inactive_term_pointer_fg=$inactive_term_bg
+inactive_term_pointer_bg=$bar_bg
+inactive_term_lSide_pointer_bg=$inactive_term_bg
+inactive_term_sep_fg=$bar_bg
+
+# Space Bar
+spaceBar_rSidePointer_bg=$bar_bg
+spaceBar_lSidePointer_bg=$bar_bg
+spaceBar_middle_bg=$bar_bg
+spaceBar_middle_fg=$bar_fg
+
+
+
+# Status update interval
+set -g status-interval 2
+
+# Basic status bar colors
+set -g status-style fg=$spaceBar_middle_fg,bg=$spaceBar_middle_bg
+
+
+# Left side of status bar
+set -g status-left-style bg=colour233,fg=colour243
+set -g status-left-length 40
+
+# Replacing UserName by Battery + RAM percentage
+cons_bg=$task_bar
+blk1_fg=#fe0000
+blk1_bg=#585859
+blk1_sep=#585859
+blk2_fg=colour232
+blk2_bg=colour237
+pref_fg=colour232
+pref_bg=colour208
+pref_icon=
+copy_bg=#fe0000
+copy_fg=colour232
+copy_icon=
+sync_bg=colour82
+sync_fg=colour232
+sync_icon=
+blk_right_sep=colour232
+
+red=colour9
+# set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,#S}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$task_bar]"
+# set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon,#S}}}  #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$task_bar]"
+# set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,#S}}} #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=colour0]"
+
+
+# -----------------------------
+#   Blk1 - Session Identifier
+# -----------------------------
+# blk1_icon=''
+# blk1_icon=''
+# blk1_icon=''
+# blk1_icon=' '
+# blk1_icon=''
+# blk1_icon=''
+# blk1_icon=' '
+blk1_icon=' '
+blk1_pre_icon=''
+blk1_icon_a=''
+blk1_icon_b=''
+blk1_icon_a_fg=#fe0000
+blk1_icon_b_fg=#fe0000
+blk1_icon_a_fg_style=bold
+blk1_icon_b_fg_style=bold
+blk1_pre_icon_fg=#a84ac9
+# blk1_icon='#S'
+blk1_icon_style=bold
+# blk1_icon_fg=#0082f8
+blk1_icon_fg=colour40
+set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}] #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=colour0]"
+
+
+# Right side of status bar
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+
+# status-right + prefix highlight
+set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
+set -g @prefix_highlight_prefix_prompt ' '
+
+
+# cons_bg=colour234
+temp_icon_fg=colour9
+temp_icon_bg=colour232
+blk4_fg=colour236
+blk4_bg=colour232
+blk3_fg=colour236
+blk3_bg=colour235
+hour_fg=colour27
+min_fg=colour23
+dot_fg=colour23
+week_day=colour202
+month_fg=colour23
+# set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour208]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon  ,}#[fg=$blk3_bg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$task_bar,bg=$blk3_bg]#[fg=colour232,bg=$task_bar,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
+set -g status-right ""
+
+
+
+# ------------------------------------
+#   Window status (inactive window)
+# ------------------------------------
+red=colour9
+dg=colour233
+st=colour233
+inact_bg=#303031
+# inact_fg=#085fff
+# inact_fg=#024ad3
+# inact_fg=#006ccf
+inact_fg=#59595c
+# inact_fg=#935400
+inactFgStyle=bold
+bell_fg=$inact_fg
+bell_fg_alert_icon=#fe0000
+# upArrow=
+upArrow=
+# alertIcon=
+alertIcon='  '
+# alertIcon=
+# Noncurr_icon=' '
+Noncurr_icon=''
+Noncurr_icon_fg=#3c3c3c
+Noncurr_icon_bg=$inact_bg
+upArrowColor=#FF8700
+upArrowColorWithAlert=colour9
+# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=$Noncurr_icon_fg,bg=$Noncurr_icon_bg]$Noncurr_icon#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg}]$Noncurr_icon#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg},bold]$Noncurr_icon #[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}]#I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}] #[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$Noncurr_icon_bg},bold]#{?window_zoomed_flag,$upArrow ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_bg},bg=#{?window_bell_flag,$bell_fg_alert_icon,$bell_fg_alert_icon}]#{?window_bell_flag,$alertIcon ,}#[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$inact_bg,$red},bg=#{?window_bell_flag,$red,$inact_bg}]#{?window_bell_flag,$alertIcon,}#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg},bold]$Noncurr_icon #[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}]#I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$red},bg=#{?window_bell_flag,$red,$inact_bg}] #{?window_zoomed_flag,$upArrow ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_bg},bg=#{?window_bell_flag,$bell_fg_alert_icon,$bell_fg_alert_icon}]#[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+
+
+# ------------------------------------
+#   Window status (Active window)
+# ------------------------------------
+activeFGstyle=bold
+# curr_bg=#01afff
+# curr_bg=#0091d5
+# curr_bg=#0087FF
+curr_bg=#0069c9
+curr_fg=colour232
+# curr_icon=''
+# curr_icon=' '
+curr_icon=''
+curr_icon_fg=#B74705
+# curr_icon_fg=colour13
+arrowUpActive=
+arrowUpActiveColor=#eebb00
+# set -g window-status-current-format "#[fg=$cons_bg,bg=$curr_bg,bold]#[fg=$curr_icon_fg,bg=$curr_bg,bold]$curr_icon#[fg=$curr_fg,bg=$curr_bg,bold] #I #W#[fg=$arrowUpActiveColor,bold]#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] #[fg=$curr_bg,bg=$cons_bg,bold]"
+set -g window-status-current-format "#[fg=$cons_bg,bg=$curr_bg,$activeFGstyle]#[fg=$curr_icon_fg,bg=$curr_bg,$activeFGstyle]#[fg=$curr_icon_fg]$curr_icon#[fg=$curr_fg,bg=$curr_bg,$activeFGstyle] #I #W#[fg=$arrowUpActiveColor,$activeFGstyle]#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,$activeFGstyle] #[fg=$curr_bg,bg=$cons_bg,$activeFGstyle]"
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style fg=colour238
+
+# Active pane border
+set -g pane-active-border-style 'fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,colour4}}'
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

@@ -14,7 +14,6 @@ active_term_txt_fg=colour39
 active_term_bg=colour232
 task_bar=default
 bar_bg=$task_bar
-# bar_fg=colour27
 gray=colour238
 active_term_fg=colour75
 inactive_term_fg=colour59
@@ -40,7 +39,6 @@ inactive_term_sep_fg=$bar_bg
 spaceBar_rSidePointer_bg=$bar_bg
 spaceBar_lSidePointer_bg=$bar_bg
 spaceBar_middle_bg=$bar_bg
-# spaceBar_middle_fg=colour9
 
 
 
@@ -52,12 +50,6 @@ set -g status-interval 2
 # set -g status-style fg=default,bg=default
 set-option -g status-style fg=#1c1c1c,bg=default
 
-# set -g status-style bg=default
-
-
-# Left side of status bar
-# set -g status-left-style bg=colour233,fg=colour243
-# set -g status-left-length 40
 
 # Replacing UserName by Battery + RAM percentage
 cons_bg=$task_bar
@@ -83,6 +75,7 @@ red=colour9
 # -----------------------------
 #   Blk1 - Session Identifier
 # -----------------------------
+# blk1_icon='#S'
 # blk1_icon=''
 # blk1_icon=''
 # blk1_icon=''
@@ -99,7 +92,6 @@ blk1_icon_b_fg=#fe0000
 blk1_icon_a_fg_style=bold
 blk1_icon_b_fg_style=bold
 blk1_pre_icon_fg=#a84ac9
-# blk1_icon='#S'
 blk1_icon_style=bold
 blk1_icon_fg=colour40
 set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=$task_bar]"
@@ -140,59 +132,43 @@ red=colour9
 dg=colour233
 st=colour233
 inact_bg=#303031
-# inact_fg=#085fff
-# inact_fg=#024ad3
-# inact_fg=#006ccf
-inact_fg=#59595c
-# inact_fg=#935400
+inact_fg=colour9
 inactFgStyle=bold
-bell_fg=$inact_fg
-bell_fg_alert_icon=colour46
+bell_fg=colour220
+bell_fg_alert_icon=colour202
 # upArrow=
 upArrow=
 # alertIcon=
-alertIcon=''
-# alertIcon=
-# Noncurr_icon=' '
-Noncurr_icon=''
-inactive_icon='  •'
+# alertIcon=''
+alertIcon='  '
+# alertIcon=''
+arrowUpActive=
+inactive_icon=' •'
+upArrowColor=colour9
 Noncurr_icon_fg=#3c3c3c
 Noncurr_icon_bg=$inact_bg
-upArrowColor=#FF8700
 upArrowColorWithAlert=colour9
-# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
-# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=$Noncurr_icon_fg,bg=$Noncurr_icon_bg]$Noncurr_icon#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
-# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg}]$Noncurr_icon#[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$inactive_term_bg},bold]#{?window_bell_flag, $alertIcon ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}] #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}]#{?window_zoomed_flag, $upArrow,} #[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
-# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg},bold]$Noncurr_icon #[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}]#I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$upArrowColor},bg=#{?window_bell_flag,$upArrowColorWithAlert,$inact_bg}] #[fg=#{?window_bell_flag,$inact_bg,$inactive_term_fg},bg=#{?window_bell_flag,$bell_fg,$Noncurr_icon_bg},bold]#{?window_zoomed_flag,$upArrow ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_bg},bg=#{?window_bell_flag,$bell_fg_alert_icon,$bell_fg_alert_icon}]#{?window_bell_flag,$alertIcon ,}#[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
-# set -g window-status-format "#[fg=#{?window_bell_flag,$inact_bg,$cons_bg},bg=#{?window_bell_flag,$cons_bg,$inact_bg}]#[fg=#{?window_bell_flag,$inact_bg,$red},bg=#{?window_bell_flag,$red,$inact_bg}]#{?window_bell_flag,$alertIcon,}#[fg=#{?window_bell_flag,$Noncurr_icon_bg,$Noncurr_icon_fg},bg=#{?window_bell_flag,$Noncurr_icon_fg,$Noncurr_icon_bg},bold]$Noncurr_icon #[fg=#{?window_bell_flag,$inact_bg,$inact_fg,$inactFgStyle},bg=#{?window_bell_flag,$bell_fg,$inact_bg}]#I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,$inact_bg,$red},bg=#{?window_bell_flag,$red,$inact_bg}] #{?window_zoomed_flag,$upArrow ,}#[fg=#{?window_bell_flag,$inact_bg,$inact_bg},bg=#{?window_bell_flag,$bell_fg_alert_icon,$bell_fg_alert_icon}]#[fg=#{?window_bell_flag,$cons_bg,$inact_bg},bg=#{?window_bell_flag,$inact_bg,$cons_bg}]"
+arrowUpActiveColor=#eebb00
 
 # WIP transparent theme
-# set -g window-status-format "#[fg=#{?window_bell_flag,$gray,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,colour234,colour234},bg=#{?window_bell_flag,colour234,colour234}]#[fg=#{?window_bell_flag,colour234,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,colour234,$inactive_term_fg,bold},bg=#{?window_bell_flag,colour9,colour234}]☉ #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,colour234,colour9},bg=#{?window_bell_flag,colour9,colour234}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,colour234},bg=#{?window_bell_flag,colour234,colour234}]"
+# .. also replacing medium dot to "alertIcon" whenever flag comes up
 setw -g window-status-bell-style fg=colour1,bg=colour8
-# set -g window-status-format "#[fg=#{?window_bell_flag,$gray,$inactive_term_arrow_fg},bg=#{?window_bell_flag,colour27,$inactive_term_arrow_bg}]#[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour234,default}]#[fg=#{?window_bell_flag,default,$inactive_term_fg},bg=#{?window_bell_flag,colour9,$inactive_term_bg}]#{?window_bell_flag,  ,}#[fg=#{?window_bell_flag,default,$inactive_term_fg,bold},bg=#{?window_bell_flag,colour9,default}]$inactive_icon #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#[fg=#{?window_bell_flag,default,colour9},bg=#{?window_bell_flag,colour9,default}]#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
-set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,  $alertIcon,}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}$inactive_icon #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
+# set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag, $alertIcon,}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}$inactive_icon #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,$inactive_icon} #{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}#I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
 
 
 # ------------------------------------
 #   Window status (Active window)
 # ------------------------------------
 activeFGstyle=bold
-# curr_bg=#01afff
-# curr_bg=#0091d5
-# curr_bg=#0087FF
 curr_bg=#0069c9
 curr_fg=colour232
-# curr_icon=''
-# curr_icon=' '
-curr_icon=''
-active_icon='   '
-curr_icon_fg=#B74705
-arrowUpActive=
-arrowUpActiveColor=#eebb00
+active_icon='  '
+curr_up_arrow_fg=colour34
 
 # WIP Transparent theme
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
-set -g window-status-current-format "#[fg=colour166,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
+set -g window-status-current-format "#[fg=colour166,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#I #W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] "
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

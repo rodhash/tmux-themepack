@@ -143,7 +143,7 @@ upArrow=
 alertIcon='  '
 # alertIcon=''
 arrowUpActive=
-inactive_icon=' •'
+inactive_icon='  •'
 upArrowColor=colour9
 Noncurr_icon_fg=#3c3c3c
 Noncurr_icon_bg=$inact_bg
@@ -163,7 +163,7 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 activeFGstyle=bold
 curr_bg=#0069c9
 curr_fg=colour232
-active_icon='  '
+active_icon='   '
 curr_up_arrow_fg=colour34
 
 # WIP Transparent theme

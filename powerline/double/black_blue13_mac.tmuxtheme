@@ -60,13 +60,14 @@ blk2_fg=colour232
 blk2_bg=colour237
 pref_fg=colour232
 pref_bg=colour208
-pref_icon=
+# 
+pref_icon=
 copy_bg=#fe0000
 copy_fg=colour232
-copy_icon=
+copy_icon=
 sync_bg=colour82
 sync_fg=colour232
-sync_icon=
+sync_icon=
 blk_right_sep=colour232
 
 red=colour9
@@ -75,15 +76,8 @@ red=colour9
 # -----------------------------
 #   Blk1 - Session Identifier
 # -----------------------------
-# blk1_icon='#S'
-# blk1_icon=''
-# blk1_icon=''
-# blk1_icon=''
-# blk1_icon=' '
-# blk1_icon=''
-# blk1_icon=''
-# blk1_icon=' '
-blk1_icon=' '
+# #S            
+blk1_icon="${osGlyph} "
 blk1_pre_icon=''
 blk1_icon_a=''
 blk1_icon_b=''
@@ -93,7 +87,7 @@ blk1_icon_a_fg_style=bold
 blk1_icon_b_fg_style=bold
 blk1_pre_icon_fg=#a84ac9
 blk1_icon_style=bold
-blk1_icon_fg=colour40
+blk1_icon_fg=colour232
 set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=$task_bar]"
 
 
@@ -142,7 +136,7 @@ upArrow=
 alertIcon='  '
 # alertIcon=''
 arrowUpActive=
-# •
+# •  ─
 inactive_icon='  '
 upArrowColor=#5c5c5c
 Noncurr_icon_fg=#3c3c3c

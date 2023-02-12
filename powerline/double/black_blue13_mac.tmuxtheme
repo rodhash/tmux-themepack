@@ -126,7 +126,7 @@ red=colour9
 dg=colour233
 st=colour233
 inact_bg=#303031
-inact_fg=colour9
+inact_fg=colour239
 inactFgStyle=bold
 bell_fg=#ff5f00
 bell_fg_alert_icon=#48bd4c
@@ -148,7 +148,8 @@ arrowUpActiveColor=#eebb00
 # .. also replacing medium dot to "alertIcon" whenever flag comes up
 setw -g window-status-bell-style fg=colour1,bg=colour8
 # set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag, $alertIcon,}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}$inactive_icon #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
-separator=╱
+separator=""
+InactiveSeparator=""
 separatorFg=#fe0000
 set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,$inactive_icon} #{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}#I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
 
@@ -164,7 +165,8 @@ curr_up_arrow_fg=#fe0000
 
 # WIP Transparent theme
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
-set -g window-status-current-format "#[fg=colour166,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#I#[fg=$separatorFg]$separator #[fg=$active_term_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] "
+IndexActiveTerm=$active_term_fg
+set -g window-status-current-format "#[fg=colour166,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#[fg=$IndexActiveTerm]#I#[fg=$separatorFg]$separator #[fg=$active_term_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] "
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

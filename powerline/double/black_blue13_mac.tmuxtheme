@@ -134,17 +134,17 @@ st=colour233
 inact_bg=#303031
 inact_fg=colour9
 inactFgStyle=bold
-bell_fg=colour220
-bell_fg_alert_icon=colour202
+bell_fg=#ff5f00
+bell_fg_alert_icon=#48bd4c
 # upArrow=
 upArrow=
-# alertIcon=
-# alertIcon=''
-alertIcon='  '
+#    
+alertIcon='  '
 # alertIcon=''
 arrowUpActive=
-inactive_icon='  •'
-upArrowColor=colour9
+# •
+inactive_icon='  '
+upArrowColor=#5c5c5c
 Noncurr_icon_fg=#3c3c3c
 Noncurr_icon_bg=$inact_bg
 upArrowColorWithAlert=colour9
@@ -164,7 +164,7 @@ activeFGstyle=bold
 curr_bg=#0069c9
 curr_fg=colour232
 active_icon='   '
-curr_up_arrow_fg=colour34
+curr_up_arrow_fg=#fe0000
 
 # WIP Transparent theme
 # set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "

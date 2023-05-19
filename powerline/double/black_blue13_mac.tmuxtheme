@@ -10,6 +10,8 @@
 
 
 # Colors
+activeBorderFg=colour238
+inactiveBorderFg=colour4
 active_term_txt_fg=colour39
 active_term_bg=colour232
 task_bar=default
@@ -181,7 +183,7 @@ set -g window-status-separator ""
 set -g status-justify left
 
 # Pane border
-set -g pane-border-style fg=colour238
+set -g pane-border-style fg=$activeBorderFg
 
 # Active pane border
 set -g pane-active-border-style "fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,$inactiveBorderFg}}"

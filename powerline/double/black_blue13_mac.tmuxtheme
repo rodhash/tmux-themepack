@@ -9,9 +9,12 @@
 # https://github.com/Lokaltog/powerline-fonts
 
 
-# Colors
-activeBorderFg=colour238
-inactiveBorderFg=colour4
+# Colors: border
+borderFg=colour202
+activeBorderFg=$borderFg # colour238
+inactiveBorderFg=$borderFg # colour4
+
+# Colors: Other (old) color variables
 active_term_txt_fg=colour39
 active_term_bg=colour232
 task_bar=default

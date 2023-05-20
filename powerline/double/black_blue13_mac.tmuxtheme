@@ -63,15 +63,15 @@ blk1_bg=#585859
 blk1_sep=#585859
 blk2_fg=colour232
 blk2_bg=colour237
-pref_fg=colour232
-pref_bg=colour208
-# 
-pref_icon=
-copy_bg=#fe0000
-copy_fg=colour232
+pref_fg=#dad000
+pref_bg=#585859
+#   
+pref_icon="${osGlyph}"
+copy_bg=#585859
+copy_fg=#fe0000
 copy_icon=
-sync_bg=colour82
-sync_fg=colour232
+sync_bg=#585859
+sync_fg=#ff00ff
 sync_icon=
 blk_right_sep=colour232
 

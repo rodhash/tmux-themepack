@@ -10,9 +10,10 @@
 
 
 # Colors: border
-borderFg=colour202
+borderFg=#ff8700
 activeBorderFg=$borderFg # colour238
 inactiveBorderFg=$borderFg # colour4
+copyModeBorder=#ffd700
 
 # Colors: Other (old) color variables
 active_term_txt_fg=colour39
@@ -191,10 +192,10 @@ set -g window-status-separator ""
 set -g status-justify left
 
 # Pane border
-set -g pane-border-style fg=$activeBorderFg
+set -g pane-border-style "fg=#{?pane_in_mode,colour4,#{?synchronize-panes,$sync_fg,$inactiveBorderFg}}"
 
 # Active pane border
-set -g pane-active-border-style "fg=#{?pane_in_mode,colour9,#{?synchronize-panes,colour11,$inactiveBorderFg}}"
+set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"
 
 # Pane number indicator
 set -g display-panes-colour colour233

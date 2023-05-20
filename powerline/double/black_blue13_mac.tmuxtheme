@@ -92,8 +92,10 @@ blk1_icon_a_fg_style=bold
 blk1_icon_b_fg_style=bold
 blk1_pre_icon_fg=#a84ac9
 blk1_icon_style=bold
-blk1_icon_fg=colour232
-set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=$task_bar]"
+blk1_icon_fg=colour243
+blk1_padding_char_fg=#4c4c4c
+blk1_padding_char=
+set -g status-left "#[fg=$blk1_padding_char_fg]$blk1_padding_char#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon ,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_sep}}},bg=$blk2_bg]#[fg=$blk2_bg,bg=$task_bar]"
 
 
 # Right side of status bar

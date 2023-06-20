@@ -13,60 +13,19 @@
 borderFg=#ff8700
 activeBorderFg=$borderFg # colour238
 inactiveBorderFg=$borderFg # colour4
-copyModeBorder=#ffd700
-
-# Colors: Other (old) color variables
 active_term_txt_fg=colour39
-active_term_bg=colour232
 task_bar=default
-bar_bg=$task_bar
 gray=colour238
 active_term_fg=colour75
-inactive_term_fg=colour59
-inactive_term_bg=colour232
-active_term_back_arrow_fg=colour39
-clock=colour27
-date_bg=colour238
-week_day=colour75
-blue=colour32
 black=colour232
-active_term_pointer_bg=$active_term_bg
-active_term_pointer_fg=$bar_bg
-active_term_front_pointer_bg=$bar_bg
-active_term_front_pointer_fg=$active_term_bg
-inactive_term_arrow_fg=colour33
-inactive_term_arrow_bg=colour336
-inactive_term_pointer_fg=$inactive_term_bg
-inactive_term_pointer_bg=$bar_bg
-inactive_term_lSide_pointer_bg=$inactive_term_bg
-inactive_term_sep_fg=$bar_bg
-
-# Space Bar
-spaceBar_rSidePointer_bg=$bar_bg
-spaceBar_lSidePointer_bg=$bar_bg
-spaceBar_middle_bg=$bar_bg
-
-
-
-# Status update interval
 set -g status-interval 2
-
-# Basic status bar colors
-# transparent taskbar bg
-# set -g status-style fg=default,bg=default
 set-option -g status-style fg=#1c1c1c,bg=default
 
-
-# Replacing UserName by Battery + RAM percentage
 cons_bg=$task_bar
-blk1_fg=#fe0000
 blk1_bg=#585859
-blk1_sep=#585859
-blk2_fg=colour232
 blk2_bg=#3c3c3c
 pref_fg=#ff8700
 pref_bg=#585859
-#   
 pref_icon="${osGlyph}"
 copy_bg=#585859
 copy_fg=#fe0000
@@ -74,15 +33,10 @@ copy_icon=穀
 sync_bg=#585859
 sync_fg=#ff00ff
 sync_icon=
-blk_right_sep=colour232
-
-red=colour9
-
 
 # -----------------------------
 #   Blk1 - Session Identifier
 # -----------------------------
-# #S            
 blk1_icon="${osGlyph} "
 blk1_pre_icon=''
 blk1_icon_a=''
@@ -103,34 +57,15 @@ lighter_sync_fg=#3d3d3d
 # Traditional arrow
 set -g status-left "#[fg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk1_padding_char_fg}}}]$blk1_padding_char#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk2_bg}}}]#[fg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk2_bg}}},bg=#{?client_prefix,default,#{?pane_in_mode,default,#{?pane_synchronized,default,default}}}]"
 
-# Tiny arrow
-# set -g status-left "#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_padding_char_fg}}}]$blk1_padding_char#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=#{?client_prefix,default,#{?pane_in_mode,default,#{?pane_synchronized,default,default}}}]#[fg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk2_bg}}},bg=#{?client_prefix,default,#{?pane_in_mode,default,#{?pane_synchronized,default,default}}}]"
-
-
 # Right side of status bar
 set -g status-right-style bg=colour233,fg=colour243
 set -g status-right-length 150
-
 
 # status-right + prefix highlight
 set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
 set -g @prefix_highlight_prefix_prompt ' '
 
-
-# cons_bg=colour234
-temp_icon_fg=colour9
-temp_icon_bg=colour232
-blk4_fg=colour236
-blk4_bg=colour232
-blk3_fg=colour236
-blk3_bg=colour235
-hour_fg=colour27
-min_fg=colour23
-dot_fg=colour23
-week_day=colour202
-month_fg=colour23
-# set -g status-right "#[fg=$temp_icon_fg,bg=$task_bar]#{?client_prefix,$pref_icon  ,}#[fg=colour208]#{?pane_in_mode,$copy_icon  ,}#{?pane_synchronized,$sync_icon  ,}#[fg=$blk3_bg,bg=$cons_bg]#[fg=$hour_fg,bg=$blk3_bg] %H#[fg=$dot_fg,bg=$blk3_bg]:#[fg=$min_fg,bg=$blk3_bg]%M#[fg=$week_day,bg=$blk3_bg] #[fg=$task_bar,bg=$blk3_bg]#[fg=colour232,bg=$task_bar,nobold]#[fg=colour32,bg=colour232] #{cpu_percentage} #[fg=#6c6c6c,bg=colour232]#{cpu_temp} #[fg=#fe0000,bg=colour232] #[fg=$cons_bg,bg=$blk4_bg]"
 set -g status-right ""
 
 
@@ -138,34 +73,16 @@ set -g status-right ""
 # ------------------------------------
 #   Window status (inactive window)
 # ------------------------------------
-red=colour9
-dg=colour233
-st=colour233
-inact_bg=#303031
-inact_fg=colour239
-inactFgStyle=bold
 bell_fg=#ff5f00
 bell_fg_alert_icon=#48bd4c
-# upArrow=
-upArrow=
-#    
 alertIcon='  '
-# alertIcon=''
 arrowUpActive=
-# •  ─
 inactive_icon='   '
 upArrowColor=#5c5c5c
-Noncurr_icon_fg=#3c3c3c
-Noncurr_icon_bg=$inact_bg
-upArrowColorWithAlert=colour9
-arrowUpActiveColor=#eebb00
 
 # WIP transparent theme
-# .. also replacing medium dot to "alertIcon" whenever flag comes up
 setw -g window-status-bell-style fg=colour1,bg=colour8
-# set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag, $alertIcon,}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}$inactive_icon #I #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag, ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
 separator=""
-InactiveSeparator=""
 separatorFg=#fe0000
 set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,$inactive_icon} #{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}#I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
 
@@ -173,14 +90,10 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 # ------------------------------------
 #   Window status (Active window)
 # ------------------------------------
-activeFGstyle=bold
-curr_bg=#0069c9
-curr_fg=colour232
 active_icon='   '
 curr_up_arrow_fg=#fe0000
 
 # WIP Transparent theme
-# set -g window-status-current-format "#[fg=colour166,bg=colour234,bold] 綠#[fg=$active_term_fg,bg=colour234,bold]#I #W#[fg=colour160,nobold]#{?window_zoomed_flag, ,}#[fg=$active_term_txt_fg,nobold] "
 IndexActiveTerm=$active_term_fg
 set -g window-status-current-format "#[fg=colour166,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#[fg=$IndexActiveTerm]#I#[fg=$separatorFg]$separator #[fg=$active_term_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] "
 

@@ -74,8 +74,8 @@ set -g status-right ""
 #   Window status (inactive window)
 # ------------------------------------
 bell_fg=#ff5f00
-bell_fg_alert_icon=#48bd4c
-alertIcon='  '
+bell_fg_alert_icon=#cf92ff
+alertIcon=' 󰗵' #  
 arrowUpActive=
 inactive_icon='   '
 upArrowColor=#5c5c5c

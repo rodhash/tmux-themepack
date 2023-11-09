@@ -67,7 +67,7 @@ set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
 set -g @prefix_highlight_prefix_prompt ' '
 
-set -g status-right "#[bg=default,fg=$blk2_vim_fg]#( . /tmp/status.sh)"
+set -g status-right "#[bg=default,fg=$blk2_vim_fg]#( . ~/repos/dotfiles/scripts/tmux_editor_counter.sh)"
 
 
 

@@ -82,7 +82,7 @@ set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
 set -g @prefix_highlight_prefix_prompt ' '
 
-set -g status-right "#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates ) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#( . $vim_counter)"
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates ) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#( . $vim_counter)"
 
 
 

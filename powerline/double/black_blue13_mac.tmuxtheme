@@ -66,7 +66,7 @@ blk1_padding_char_fg=$blk2_bg
 lighter_copy_fg=#3d3d3d
 lighter_pref_fg=#3d3d3d
 lighter_sync_fg=#3d3d3d
-blk2_vim_fg=#a4a30e
+blk2_vim_fg=#707208
 mason_fg=#ff00ff
 tmux_fg=#646608
 

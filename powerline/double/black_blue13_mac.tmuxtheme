@@ -20,6 +20,7 @@
 vim_counter="tmux_editor_counter.sh"
 mason_updates="tmux_mason_updates.sh"
 tpm_updates="tmux_tpm_updates.sh"
+zsh_plugins_updates="zsh_plugins_update.sh"
 
 
 # Colors: border
@@ -68,7 +69,8 @@ lighter_pref_fg=#3d3d3d
 lighter_sync_fg=#3d3d3d
 blk2_vim_fg=#707208
 mason_fg=#ff00ff
-tmux_fg=#3d3d3d
+tmux_fg=#8700ff
+zsh_plugins_fg=#ff5f00
 
 # Traditional arrow
 set -g status-left "#[fg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk1_padding_char_fg}}}]#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=$blk1_icon_a_fg,$blk1_icon_a_fg_style]$blk1_icon_a#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}},nobold},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk2_bg}}}]#[fg=#{?client_prefix,$lighter_pref_fg,#{?pane_in_mode,$lighter_copy_fg,#{?pane_synchronized,$lighter_sync_fg,$blk2_bg}}},bg=#{?client_prefix,default,#{?pane_in_mode,default,#{?pane_synchronized,default,default}}}]"
@@ -82,7 +84,7 @@ set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
 set -g @prefix_highlight_prefix_prompt ' '
 
-set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates ) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#( . $vim_counter)"
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates ) #[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates)  #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#( . $vim_counter)"
 
 
 

@@ -20,7 +20,7 @@
 vim_counter="tmux_editor_counter.sh"
 mason_updates="tmux_mason_updates.sh"
 tpm_updates="tmux_tpm_updates.sh"
-zsh_plugins_updates="zsh_plugins_update.sh"
+zsh_plugins_updates="tmux_zsh_plugins_updates.sh"
 
 
 # Colors: border

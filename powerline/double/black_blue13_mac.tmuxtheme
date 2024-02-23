@@ -95,7 +95,7 @@ bell_fg=#ff5f00
 bell_fg_alert_icon=#cf92ff
 alertIcon=' 󰗵' # 
 arrowUpActive=
-inactive_icon='   '
+inactive_icon='  ◌'
 upArrowColor=#5c5c5c
 
 # WIP transparent theme
@@ -108,7 +108,7 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 # ------------------------------------
 #   Window status (Active window)
 # ------------------------------------
-active_icon='   '
+active_icon='  ⬤ '
 curr_up_arrow_fg=#fe0000
 
 # WIP Transparent theme

@@ -95,7 +95,7 @@ bell_fg=#0087af
 bell_fg_alert_icon=#fe0000
 alertIcon=' 󰱈 ' # 
 arrowUpActive=
-inactive_icon='  '
+inactive_icon='  ◯'
 inactive_icon_fg=#9f0207
 upArrowColor=#5c5c5c
 

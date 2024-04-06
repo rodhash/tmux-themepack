@@ -1,0 +1,175 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+
+
+# ---------------
+#  Requirements
+# ---------------
+# 1. Add the below scripts to "~/.local/bin", a copy or symlink
+
+
+
+# Scripts
+vim_counter="tmux_editor_counter.sh"
+mason_updates="tmux_mason_updates.sh"
+tpm_updates="tmux_tpm_updates.sh"
+zsh_plugins_updates="tmux_zsh_plugins_updates.sh"
+
+
+# Colors: border
+gray=colour238
+black=colour232
+task_bar=default
+activeBorderFg=#fe0000
+inactiveBorderFg=#353535
+active_term_txt_fg=colour39
+active_term_fg=#ff00ff
+set -g status-interval 2
+set-option -g status-style fg=#1c1c1c,bg=default
+
+cons_bg=$task_bar
+pref_bg=#585859
+copy_bg=#585859
+sync_bg=#585859
+
+# -----------------------------
+#   Blk1 - Session Identifier
+# -----------------------------
+blk1_icon="${osGlyph} "
+blk1_pre_icon=''
+blk1_icon_a=''
+blk1_icon_b=''
+blk1_icon_a_fg=#fe0000
+blk1_icon_b_fg=#fe0000
+blk1_icon_a_fg_style=bold
+blk1_icon_b_fg_style=bold
+blk1_pre_icon_fg=#a84ac9
+blk1_icon_style=bold
+blk1_icon_fg=$blk2_bg
+blk1_padding_char_fg=$blk2_bg
+# blk1_padding_char=▐
+lighter_copy_fg=#3d3d3d
+lighter_pref_fg=#3d3d3d
+lighter_sync_fg=#3d3d3d
+blk2_vim_fg=#707208
+mason_fg=#ff00ff
+tmux_fg=#8700ff
+zsh_plugins_fg=#ff5f00
+blk1_default_fg=$blk2_bg
+
+
+
+# Standard icons / config
+pref_icon="${osGlyph}"
+pref_icon_default_fg=#555555
+copy_icon=📌
+sync_icon=
+
+
+
+# Standard theme
+pref_fg=#fe0000
+copy_fg=#f09859
+sync_fg=#fe0020
+blk2_bg=#000769
+blk1_bg=#303030
+
+
+# Red-theme
+# blk1_bg=#fe5859
+# blk2_bg=#555555
+# pref_fg=#87d7ff
+# copy_fg=#fff859
+# sync_fg=#151515
+
+# Traditional arrow
+set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}}},bg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},$blk1_icon_style]  #[fg=$blk1_pre_icon_fg]$blk1_pre_icon#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$pref_icon_default_fg}}},bg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=$blk1_bg,bg=$blk2_bg]#[fg=#{?client_prefix,$blk2_bg,#{?pane_in_mode,$blk2_bg,#{?pane_synchronized,$blk2_bg,$blk2_bg}}},bg=#{?client_prefix,default,#{?pane_in_mode,default,#{?pane_synchronized,default,default}}}]"
+
+# option2: without second "arrow"
+# set -g status-left "#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$blk1_bg}}}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}}},bg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},$blk1_icon_style]  #[fg=$blk1_pre_icon_fg]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$pref_icon_default_fg}}},bg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style]$blk1_icon_b #[fg=$blk1_bg,bg=default]"
+
+# Right side of status bar
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+# status-right + prefix highlight
+set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
+set -g @prefix_highlight_prefix_prompt ' '
+
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#($vim_counter)"
+
+
+
+# ------------------------------------
+#   Window status (inactive window)
+# ------------------------------------
+bell_fg=#0087af
+bell_fg_alert_icon=#ff5f00
+alertIcon=' ' # 
+arrowUpInactive=󰳢
+inactive_icon='   '
+inactive_icon_fg=#9f0207
+upArrowColor=#353535
+
+# WIP transparent theme
+setw -g window-status-bell-style fg=colour1,bg=colour8
+separator=""
+separatorFg=#fe0000
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]} #{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}#I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
+
+
+# ------------------------------------
+#   Window status (Active window)
+# ------------------------------------
+arrowUpActive=󰳢
+active_icon='   '
+active_icon_fg=#fe0000
+curr_up_arrow_fg=#aa0305
+
+# WIP Transparent theme
+IndexActiveTerm=$active_term_fg
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,bold]$active_icon#[fg=$active_term_fg,bg=default,bold]#[fg=$IndexActiveTerm]#I#[fg=$separatorFg]$separator #[fg=$active_term_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpActive,}#[fg=$active_term_txt_fg,nobold] "
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style "fg=#{?pane_in_mode,colour4,#{?synchronize-panes,$sync_fg,$inactiveBorderFg}}"
+
+# Active pane border
+set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

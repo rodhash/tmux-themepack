@@ -80,6 +80,7 @@ copy_fg=#f09859
 sync_fg=#fe0020
 blk2_bg=#000769
 blk1_bg=#303030
+blk3_vim_fg=#707208
 
 
 # Red-theme
@@ -104,7 +105,11 @@ set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
 set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
 set -g @prefix_highlight_prefix_prompt ' '
 
-set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk2_vim_fg]#($vim_counter)"
+# plain time
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=#fe0000,bold] #[fg=#993535,bold]%H#[fg=#353535,bold]:%M#[fg=$blk1_bg,bg=default] "
+
+# bubble time
+# set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$blk1_bg,bg=default]#[fg=#fe0000,bg=$blk1_bg,bold] #[fg=#993535,bold]%H#[fg=#151515,bold]:%M#[fg=$blk1_bg,bg=default]"
 
 
 

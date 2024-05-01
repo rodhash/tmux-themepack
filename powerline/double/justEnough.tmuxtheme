@@ -74,7 +74,7 @@ blk1_default_fg=$blk2_bg
 
 # Standard icons / config
 pref_icon="${osGlyph}"
-pref_icon_default_fg=#555555
+pref_icon_default_fg=#000000
 copy_icon="${osGlyph} "
 sync_icon="${osGlyph} ""${osGlyph}"
 
@@ -82,10 +82,10 @@ sync_icon="${osGlyph} ""${osGlyph}"
 
 # Standard theme
 pref_fg=#fe0000
-copy_fg=#fff000
+copy_fg=#ff5f00
 sync_fg=#ff00ff
 blk2_bg=#000769
-blk1_bg=#303030
+blk1_bg=#000769
 
 time_bg=#8b0106
 time_h=#fe0000
@@ -142,7 +142,7 @@ upArrowColor=#9f0207
 setw -g window-status-bell-style fg=colour1,bg=colour8
 separator=""
 separatorFg=#fe0000
-set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]} #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}  #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}] "
 
 
 # ------------------------------------
@@ -151,14 +151,14 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 arrowUpActive=󰄝
 active_icon=' •' # 
 active_icon_fg=#aa0305
-curr_up_arrow_fg=#d59374
+curr_up_arrow_fg=#fe0000
 
-active_bubble_bg=#cd0000
-active_bubble_fg=#000000
+active_bubble_bg=#1f1f2c
+active_bubble_fg=#d75fff
 
 # WIP Transparent theme
 IndexActiveTerm=$active_term_fg
-set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_bg]#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg]#I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive ,}#[fg=$active_bubble_bg,bg=default,nobold]"
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_bg]#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive ,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

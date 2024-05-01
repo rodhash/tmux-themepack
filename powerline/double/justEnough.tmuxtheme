@@ -133,10 +133,10 @@ set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,
 bell_fg=#0087af
 bell_fg_alert_icon=#ff5f00
 alertIcon=' ' # 
-arrowUpInactive=󰳢
+arrowUpInactive=󰄝
 inactive_icon='   '
 inactive_icon_fg=#9f0207
-upArrowColor=#353535
+upArrowColor=#9f0207
 
 # WIP transparent theme
 setw -g window-status-bell-style fg=colour1,bg=colour8
@@ -148,13 +148,13 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 # ------------------------------------
 #   Window status (Active window)
 # ------------------------------------
-arrowUpActive=󰳢
+arrowUpActive=󰄝
 active_icon=' •' # 
 active_icon_fg=#aa0305
-curr_up_arrow_fg=#8a0004
+curr_up_arrow_fg=#d59374
 
 active_bubble_bg=#cd0000
-active_bubble_fg=#202020
+active_bubble_fg=#000000
 
 # WIP Transparent theme
 IndexActiveTerm=$active_term_fg

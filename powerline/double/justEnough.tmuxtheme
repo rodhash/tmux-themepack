@@ -151,10 +151,10 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 arrowUpActive=󰄝
 active_icon=' •' # 
 active_icon_fg=#aa0305
-curr_up_arrow_fg=#fe0000
+curr_up_arrow_fg=#aa0305
 
 active_bubble_bg=#1f1f2c
-active_bubble_fg=#d75fff
+active_bubble_fg=#cd0000
 
 # WIP Transparent theme
 IndexActiveTerm=$active_term_fg

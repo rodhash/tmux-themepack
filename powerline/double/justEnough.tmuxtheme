@@ -153,13 +153,12 @@ active_icon=' •' # 
 active_icon_fg=#aa0305
 curr_up_arrow_fg=#ff7575
 
-active_bubble_bg=#aa0305
-active_bubble_fg=#cd0000
-active_text_fg=#202020
+active_bubble_bg=#cd0000
+active_bubble_fg=#202020
 
 # WIP Transparent theme
 IndexActiveTerm=$active_term_fg
-set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_fg]#[fg=$active_text_fg,bg=$active_bubble_fg,bold]#[fg=$active_text_fg]#I#[fg=$active_text_fg]$separator #[fg=$active_text_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive ,}#[fg=$active_bubble_fg,bg=default,nobold]"
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_bg]#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg]#I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive ,}#[fg=$active_bubble_bg,bg=default,nobold]"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

@@ -142,7 +142,7 @@ upArrowColor=#353535
 setw -g window-status-bell-style fg=colour1,bg=colour8
 separator=""
 separatorFg=#fe0000
-set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]} #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]} #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}]"
 
 
 # ------------------------------------

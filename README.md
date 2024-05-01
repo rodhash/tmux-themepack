@@ -43,17 +43,11 @@ Choose which theme is loaded by setting the `@themepack` option in your
 ### Basic Themes
 
 
-**NEW theme created: (`improvedcyan`):**
+**NEW theme created: (`justEnough`):**
 
->Added just couple customization to the awesome/original cyan theme.
-
-![improvedcyan](preview/improvedcyan_fullscreen.png)
+> Theme demonstration: [Youtube](https://www.youtube.com/watch?v=amLHBHZErfQ)
 
 
-<br>
-<br>
-<br>
-<br>
 
 ## Here follows the same themes already in the main repo
 

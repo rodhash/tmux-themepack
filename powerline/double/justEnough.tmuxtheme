@@ -123,7 +123,7 @@ set -g @prefix_highlight_prefix_prompt ' '
 # set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=#fe0000,bold] #[fg=#993535,bold]%H#[fg=#353535,bold]:%M#[fg=$blk1_bg,bg=default] "
 
 # bubble time
-set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$time_bg,bg=default]#[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$time_bg,bg=default]#[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
 
 
 

@@ -91,7 +91,7 @@ time_bg=#8b0106
 time_h=#fe0000
 time_m=#000000
 call_fg=#8b0000
-call_icon=' '
+call_icon=''
 
 # time_bg=#b50104
 # time_h=#ff5f00

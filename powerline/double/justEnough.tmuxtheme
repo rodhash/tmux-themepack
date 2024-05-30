@@ -135,7 +135,7 @@ set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,
 bell_fg=#0087af
 bell_fg_alert_icon=#ff5f00
 alertIcon=' ' # 
-arrowUpInactive=󰄝
+arrowUpInactive=' 󰬭' # 󰬭 ⇪
 inactive_icon='   '
 inactive_icon_fg=#9f0207
 upArrowColor=#9f0207
@@ -150,7 +150,7 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 # ------------------------------------
 #   Window status (Active window)
 # ------------------------------------
-arrowUpActive=󰄝
+arrowUpActive=' ' #  󰬬 ⇧
 active_icon=' •' # 
 active_icon_fg=#aa0305
 curr_up_arrow_fg=#aa0305

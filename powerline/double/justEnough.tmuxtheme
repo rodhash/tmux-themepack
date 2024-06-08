@@ -28,7 +28,7 @@ tpm_updates="tmux_tpm_updates.sh"
 vim_counter="tmux_editor_counter.sh"
 mason_updates="tmux_mason_updates.sh"
 zap_plugins_updates="tmux_zap_updates.sh"
-zsh_plugins_updates="tmux_zsh_plugins_updates.sh"
+zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 
 # Indicators icons
 call_icon=''
@@ -73,7 +73,7 @@ blk2_vim_fg=#707208
 mason_fg=#990000
 zap_fg=#5f00ff
 tmux_fg=#8700ff
-zsh_plugins_fg=#372818
+omz_plugin_fg=#372818
 blk1_default_fg=$blk2_bg
 
 
@@ -130,8 +130,7 @@ set -g @prefix_highlight_prefix_prompt ' '
 # set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=#fe0000,bold] #[fg=#993535,bold]%H#[fg=#353535,bold]:%M#[fg=$blk1_bg,bg=default] "
 
 # bubble time
-# set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$call_fg,bg=default]$call_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
-set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default,bold]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[fg=$zap_fg,bg=default]#(. $zap_plugins_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$call_fg,bg=default]$call_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default,bold]#( . $tpm_updates )#[fg=$omz_plugin_fg,bg=default]#( . $zsh_plugins_updates)#[fg=$mason_fg,bg=default]#( . $mason_updates)#[fg=$zap_fg,bg=default]#(. $zap_plugins_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$call_fg,bg=default]$call_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
 
 
 

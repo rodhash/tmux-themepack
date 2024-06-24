@@ -30,8 +30,14 @@ mason_updates="tmux_mason_updates.sh"
 zap_plugins_updates="tmux_zap_updates.sh"
 zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 
+# New colors
+inactive_term_fg=#7b00c6
+
+
+
+
 # Indicators icons
-call_icon=''
+cal_icon=''
 
 
 # Colors: border
@@ -40,7 +46,6 @@ black=colour232
 task_bar=default
 activeBorderFg=#fe0000
 inactiveBorderFg=#353535
-active_term_txt_fg=colour39
 active_term_fg=#ff00ff
 set -g status-interval 2
 set-option -g status-style fg=#1c1c1c,bg=default
@@ -55,26 +60,16 @@ sync_bg=#585859
 # -----------------------------
 blk1_icon="${osGlyph} "
 blk1_pre_icon=''
-blk1_icon_a=''
 blk1_icon_b=''
-blk1_icon_a_fg=#fe0000
 blk1_icon_b_fg=#fe0000
-blk1_icon_a_fg_style=bold
 blk1_icon_b_fg_style=bold
 blk1_pre_icon_fg=#a84ac9
 blk1_icon_style=bold
 blk1_icon_fg=$blk2_bg
-blk1_padding_char_fg=$blk2_bg
-# blk1_padding_char=▐
-lighter_copy_fg=#3d3d3d
-lighter_pref_fg=#3d3d3d
-lighter_sync_fg=#3d3d3d
-blk2_vim_fg=#707208
 mason_fg=#990000
 zap_fg=#5f00ff
 tmux_fg=#8700ff
 omz_plugin_fg=#372818
-blk1_default_fg=$blk2_bg
 
 
 
@@ -90,13 +85,12 @@ sync_icon="${osGlyph} ""${osGlyph}"
 pref_fg=#fe0000
 copy_fg=#ff5f00
 sync_fg=#ff00ff
-blk2_bg=#000769
 blk1_bg=#000769
 
 time_bg=#8b0106
 time_h=#fe0000
 time_m=#000000
-call_fg=#8b0000
+cal_fg=#8b0000
 
 # time_bg=#b50104
 # time_h=#ff5f00
@@ -130,16 +124,16 @@ set -g @prefix_highlight_prefix_prompt ' '
 # set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default]#( . $tpm_updates )#[fg=$zsh_plugins_fg,bg=default]#( . $zsh_plugins_updates) #[fg=$mason_fg,bg=default]#( . $mason_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=#fe0000,bold] #[fg=#993535,bold]%H#[fg=#353535,bold]:%M#[fg=$blk1_bg,bg=default] "
 
 # bubble time
-set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default,bold]#( . $tpm_updates )#[fg=$omz_plugin_fg,bg=default]#( . $zsh_plugins_updates)#[fg=$mason_fg,bg=default]#( . $mason_updates)#[fg=$zap_fg,bg=default]#(. $zap_plugins_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$call_fg,bg=default]$call_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
+set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,bg=default,bold]#( . $tpm_updates )#[fg=$omz_plugin_fg,bg=default]#( . $zsh_plugins_updates)#[fg=$mason_fg,bg=default]#( . $mason_updates)#[fg=$zap_fg,bg=default]#(. $zap_plugins_updates)#[bg=default,fg=$blk3_vim_fg]#($vim_counter)#[fg=$cal_fg,bg=default]$cal_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] #[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]"
 
 
 
 # ------------------------------------
 #   Window status (inactive window)
 # ------------------------------------
-bell_fg=#0087af
-bell_fg_alert_icon=#ff5f00
-alertIcon=' ' # 
+bell_fg=#9f0207
+bell_fg_alert_icon=#a3a30c
+alertIcon=' 󰱈' # 
 arrowUpInactive=' 󰬭' # 󰬭 ⇪
 inactive_icon='   '
 inactive_icon_fg=#9f0207
@@ -148,8 +142,7 @@ upArrowColor=#9f0207
 # WIP transparent theme
 setw -g window-status-bell-style fg=colour1,bg=colour8
 separator=""
-separatorFg=#fe0000
-set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=colour239]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}  #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,colour9,default}] "
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}  #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive ,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,default,default}] "
 
 
 # ------------------------------------
@@ -164,7 +157,6 @@ active_bubble_bg=#1f1f2c
 active_bubble_fg=#cd0000
 
 # WIP Transparent theme
-IndexActiveTerm=$active_term_fg
 set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_bg]#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive ,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]"
 
 # Current window status

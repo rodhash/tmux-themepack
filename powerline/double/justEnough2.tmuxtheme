@@ -51,10 +51,10 @@ blk1_icon_b=''
 blk1_pre_icon=''
 blk1_left_sep=' '
 blk1_right_sep=' '
-active_icon=' ' # 
+active_icon='  ' # 
 alertIcon=' 󰱈' # 
 arrowUpInactive='⇧' # 󰬭 ⇪
-inactive_icon='   '
+inactive_icon=''
 pref_icon_default_fg=#a80000
 active_term_left_sep=''  # 
 active_term_right_sep='' # 
@@ -139,7 +139,7 @@ set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=defaul
 
 
 # Window status (Active window)
-set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon #[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep"
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep"
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

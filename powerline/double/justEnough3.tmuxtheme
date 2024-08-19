@@ -69,7 +69,7 @@ arrowUpActive='󰜷' #  󰬬 ⇧
 gray=colour238
 black=colour232
 task_bar=default
-activeBorderFg=#fe0000
+activeBorderFg=#a80000
 inactiveBorderFg=#252525
 
 

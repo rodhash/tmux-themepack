@@ -53,7 +53,7 @@ blk1_left_sep=' '
 blk1_right_sep=' '
 active_icon=' ● ' # 
 alertIcon=' 󰱈' # 
-arrowUpInactive='⇧' # 󰬭 ⇪
+arrowUpInactive='ﬕ' # 󰬭 ⇪ ﬕ   󰹍
 inactive_icon=''
 pref_icon_default_fg=#a80000
 active_term_left_sep=''
@@ -62,7 +62,8 @@ active_pane_left_sep=''
 active_pane_right_sep=''
 
 # {{{ No extra spacing?
-arrowUpActive='󰜷' #  󰬬 ⇧
+arrowUpActive='󰧥' #  󰬬 ⇧ ﬕ 󰧥
+PanearrowUpActive='󰜷'
 
 
 # -----------------------
@@ -99,12 +100,12 @@ bell_fg=#9f0207
 blk1_bg=default
 cons_bg=$task_bar
 blk1_icon_style=bold
-upArrowColor=#5b0002
+upArrowColor=#4f0002
 blk1_icon_fg=$blk2_bg
 active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
-curr_up_arrow_fg=#282b31
+curr_up_arrow_fg=#3b0003
 active_bubble_bg=#930003
 active_pane_bubble_bg=#252525
 pane_curr_up_arrow_fg=#a80000
@@ -168,7 +169,7 @@ set -g pane-border-status top
 # set -g pane-border-format "#{pane_index} #{pane_current_command}"
 # set -g pane-border-format " #[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #{pane_index}#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep "
 
-set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_pane_left_sep#[fg=$active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_pane_right_sep "
+set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_pane_left_sep#[fg=$active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_pane_right_sep "
 
 # Active pane border
 set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"

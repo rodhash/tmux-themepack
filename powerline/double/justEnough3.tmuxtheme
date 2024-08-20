@@ -43,17 +43,17 @@ zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 # ------------------------
 separator=""
 cal_icon=''
-pref_icon=""
+pref_icon="󰳽"
 blk1_icon=" "
-copy_icon=" "
+copy_icon=" " # 󰏝
 sync_icon="╱╱"
 blk1_icon_b=''
 blk1_pre_icon=''
 blk1_left_sep=' '
 blk1_right_sep=' '
 active_icon=' ● ' # 
-alertIcon=' 󰱈' # 
-arrowUpInactive='ﬕ' # 󰬭 ⇪ ﬕ   󰹍
+alertIcon='󰭺' # 
+arrowUpInactive='󱋊' # 󰬭 ⇪ ﬕ   󰹍
 inactive_icon=''
 pref_icon_default_fg=#a80000
 active_term_left_sep=''
@@ -90,7 +90,7 @@ cal_fg=#8b0000
 copy_bg=#585859
 sync_bg=#585859
 pref_fg=#fff000
-copy_fg=#ff5f00
+copy_fg=#b80000
 sync_fg=#ff00ff
 blk1_bg=default
 time_bg=#8b0106
@@ -107,13 +107,14 @@ blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
 curr_up_arrow_fg=#3b0003
 active_bubble_bg=#930003
-active_pane_bubble_bg=#252525
+active_pane_bubble_bg=#3b0000
 pane_curr_up_arrow_fg=#a80000
 active_bubble_fg=#000000
+pane_active_bubble_fg=#fe0000
 inactive_term_fg=#282828
 blk1_pre_icon_fg=#a84ac9
 blk1_icon_b_fg_style=bold
-bell_fg_alert_icon=#a3a30c
+bell_fg_alert_icon=#cd0000
 
 
 
@@ -140,7 +141,7 @@ set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,
 
 # Window status (inactive window)
 setw -g window-status-bell-style fg=colour1,bg=colour8
-set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[fg=]}#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag, $alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]}#{?window_bell_flag,#[fg=$bell_fg],#[bg=default]}  #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,default,default}] "
+set -g window-status-format "#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=],#[fg=]}#{?window_bell_flag,#[fg=],#[bg=default]}  #I$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=default]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,default,default}]#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=default]}#{?window_bell_flag,$alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]} "
 
 
 # Window status (Active window)
@@ -169,7 +170,7 @@ set -g pane-border-status top
 # set -g pane-border-format "#{pane_index} #{pane_current_command}"
 # set -g pane-border-format " #[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #{pane_index}#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep "
 
-set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_pane_left_sep#[fg=$active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_pane_right_sep "
+set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$pane_active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_pane_right_sep "
 
 # Active pane border
 set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"

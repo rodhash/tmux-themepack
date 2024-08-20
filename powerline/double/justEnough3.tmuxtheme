@@ -56,8 +56,10 @@ alertIcon=' 󰱈' # 
 arrowUpInactive='⇧' # 󰬭 ⇪
 inactive_icon=''
 pref_icon_default_fg=#a80000
-active_term_left_sep=''  #  
-active_term_right_sep='' #  
+active_term_left_sep=''
+active_term_right_sep=''
+active_pane_left_sep=''
+active_pane_right_sep=''
 
 # {{{ No extra spacing?
 arrowUpActive='󰜷' #  󰬬 ⇧
@@ -166,7 +168,7 @@ set -g pane-border-status top
 # set -g pane-border-format "#{pane_index} #{pane_current_command}"
 # set -g pane-border-format " #[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #{pane_index}#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep "
 
-set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_term_right_sep "
+set -g pane-border-format " #[fg=$active_pane_bubble_bg]$active_pane_left_sep#[fg=$active_bubble_fg,bg=$active_pane_bubble_bg,bold]$separator #[fg=$active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_pane_bubble_bg,nobold] #[fg=$active_pane_bubble_bg,bg=default,nobold]$active_pane_right_sep "
 
 # Active pane border
 set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"

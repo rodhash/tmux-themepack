@@ -56,7 +56,7 @@ blk1_pre_icon=''
 blk1_left_sep=' '
 blk1_right_sep=' '
 active_icon='' #  ●
-alertIcon='󰭺' # 
+alertIcon='󰭺 ' # 
 arrowUpInactive='󱋊' # 󰬭 ⇪ ﬕ   󰹍
 inactive_icon=''
 pref_icon_default_fg=#a80000
@@ -113,15 +113,13 @@ curr_up_arrow_fg=#3b0003
 active_bubble_bg=#930003
 active_pane_bubble_bg1=#3b0000
 active_pane_bubble_bg2=#181818
-inactive_pane_bubble_bg=#151515
 pane_curr_up_arrow_fg=#a80000
 active_bubble_fg=#000000
 pane_active_bubble_fg=#fe0000
 pane_index_fg=#930000
 index_fg=#4e0002
-inactive_pane_index_fg=#930000
 index_fg_style='#I'
-index_fg_style_inactive='  #I'
+index_fg_style_inactive=' #I'
 inactive_term_fg=#282828
 blk1_pre_icon_fg=#a84ac9
 blk1_icon_b_fg_style=bold
@@ -134,6 +132,11 @@ pyright_icon_fg=#7b00c6
 nvim_fg=#646608
 blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold] #[fg=$session_fg]#S"
 
+# Inactive panes
+inactive_pane_bubble_bg=#181818
+inactive_pane_index_fg=#930000
+inactive_pane_fg=#000000
+zoomed_icon_fg=#6a0206
 
 
 set -g status-interval 2
@@ -162,8 +165,7 @@ set -g status-right "#[fg=$tmux_fg,bg=default]#{pomodoro_status}  #[fg=$tmux_fg,
 # Window status (inactive window)
 # ---------------------------------
 setw -g window-status-bell-style fg=colour1,bg=colour8
-set -g window-status-format "#[fg=$inactive_pane_bubble_bg]$active_term_left_sep#[fg=$inactive_pane_index_fg,bg=$inactive_pane_bubble_bg,bold]$index_fg_style_inactive#[fg=colour239,bold]#{?window_bell_flag,#[bg=default],#[bg=]}#{?window_bell_flag,#[fg=],#[fg=]}#{?window_bell_flag,#[fg=],#[bg=$inactive_pane_bubble_bg]}$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=default],#[bg=$inactive_pane_bubble_bg]}#{?window_zoomed_flag,#[fg=$upArrowColor],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,default,default}]#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=$inactive_pane_bubble_bg]}#{?window_bell_flag,$alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]}#[fg=$inactive_pane_bubble_bg,bg=default]$active_term_right_sep "
-
+set -g window-status-format "#{?window_bell_flag,#[bg=default],#[bg=]}#[fg=$inactive_pane_bubble_bg]$active_term_left_sep#[fg=$inactive_pane_index_fg,bg=$inactive_pane_bubble_bg,bold]$index_fg_style_inactive#[fg=$inactive_pane_fg,bold]#{?window_bell_flag,#[bg=$inactive_pane_bubble_bg],#[bg=]}#{?window_bell_flag,#[fg=],#[fg=]}#{?window_bell_flag,#[fg=],#[bg=$inactive_pane_bubble_bg]}$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=$inactive_pane_bubble_bg],#[bg=$inactive_pane_bubble_bg]}#{?window_zoomed_flag,#[fg=$zoomed_icon_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,$inactive_pane_bubble_bg,default}]#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=$inactive_pane_bubble_bg]}#{?window_bell_flag,$alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]}#[fg=$inactive_pane_bubble_bg,bg=default]$active_term_right_sep "
 
 # ---------------------------------
 # Window status (Active window)

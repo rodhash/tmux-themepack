@@ -117,7 +117,7 @@ pane_curr_up_arrow_fg=#a80000
 active_bubble_fg=#000000
 pane_active_bubble_fg=#fe0000
 pane_index_fg=#930000
-index_fg=#4e0002
+index_fg=#fe0002
 index_fg_style='#I'
 index_fg_style_inactive=' #I'
 inactive_term_fg=#282828
@@ -134,7 +134,7 @@ blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold] #[fg=$session_fg]#S"
 
 # Inactive panes
 inactive_pane_bubble_bg=#181818
-inactive_pane_index_fg=#930000
+inactive_pane_index_fg=#454545
 inactive_pane_fg=#000000
 zoomed_icon_fg=#6a0206
 

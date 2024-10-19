@@ -68,6 +68,7 @@ active_pane_right_sep=''
 # {{{ No extra spacing?
 arrowUpActive='' #  󰬬 ⇧ ﬕ  󰧥
 PanearrowUpActive='󰜷'
+pre_index_fg_style='' #   ﭲ ﲵ
 
 
 # -----------------------
@@ -118,6 +119,7 @@ active_bubble_fg=#000000
 pane_active_bubble_fg=#fe0000
 pane_index_fg=#930000
 index_fg=#fe0002
+pre_index_fg=#4f0000
 index_fg_style='#I'
 index_fg_style_inactive=' #I'
 inactive_term_fg=#282828
@@ -170,7 +172,7 @@ set -g window-status-format "#{?window_bell_flag,#[bg=default],#[bg=]}#[fg=$inac
 # ---------------------------------
 # Window status (Active window)
 # ---------------------------------
-set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep#[fg=$index_fg,bg=$active_bubble_bg,bold] $index_fg_style#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg]#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep "
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep#[fg=$pre_index_fg,bg=$active_bubble_bg,bold]$pre_index_fg_style#[fg=$index_fg,bg=$active_bubble_bg,bold] $index_fg_style#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg]#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep "
 
 # Current window status
 set -g window-status-current-style bg=colour39,fg=colour235

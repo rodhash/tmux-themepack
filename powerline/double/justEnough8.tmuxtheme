@@ -136,8 +136,8 @@ blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold] #[fg=$session_fg]#S"
 
 # Inactive panes
 inactive_pane_bubble_bg=#181818
-inactive_pane_index_fg=#353535
-inactive_pane_fg=#000000
+inactive_pane_index_fg=#6a0206
+inactive_pane_fg=#7b00c6
 zoomed_icon_fg=#6a0206
 
 

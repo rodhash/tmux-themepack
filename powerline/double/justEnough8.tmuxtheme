@@ -204,7 +204,7 @@ tmux_curr_session_fg="#8d0001"
 tmux_sessions_total="#303030"
 tmux_sessions_icon=" "
 tmux_sessions_icon_fg="#a80000"
-WindowInfo="#[fg=$tmux_sessions_icon_fg]$tmux_sessions_icon #[fg=$tmux_curr_session_fg,bold]#{window_index}#[fg=$tmux_sessions_total]/#{session_windows}"
+WindowInfo="#[fg=$tmux_sessions_icon_fg]$tmux_sessions_icon #[fg=$tmux_curr_session_fg,bold]#{window_index}#[fg=$tmux_sessions_total]╱#{session_windows}"
 
 
 # ---------------

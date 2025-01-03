@@ -64,6 +64,8 @@ active_term_left_sep=''
 active_term_right_sep=''
 active_pane_left_sep=''
 active_pane_right_sep=''
+sessionName_left_sep=''
+sessionName_right_sep=''
 
 # {{{ No extra spacing?
 arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥
@@ -132,7 +134,7 @@ nodejs_fg=#878700
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#646608
-blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold] #[fg=$session_fg]#S"
+blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold] #[fg=$session_fg]#{session_windows}"
 
 # Inactive panes
 inactive_pane_bubble_bg=#181818
@@ -212,7 +214,11 @@ WindowInfo="#[fg=$tmux_sessions_icon_fg]$tmux_sessions_icon #[fg=$tmux_curr_sess
 # ---------------
 set -g pane-border-style "fg=#{?pane_in_mode,colour4,#{?synchronize-panes,$sync_fg,$inactiveBorderFg}}"
 set -g pane-border-status top
-set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$pane_index_fg]#{pane_index}╱ #[fg=$pane_active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$pane_index_fg]#{pane_index}╱ #[fg=$pane_active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+#{pane_index}╱ #[fg=$pane_active_bubble_fg]#{pane_current_command}
+
+set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$pane_index_fg]#S#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
 
 
 # Active pane border

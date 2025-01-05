@@ -207,10 +207,11 @@ ProcessID="#[fg=$pidIconFg]$pidIcon #[fg=$PidGreen,bold]$pid"
 tmux_curr_session_fg="#464646"
 tmux_sessions_total="#303030"
 tmux_sessions_icon=" "
-process_icon="💲"
+process_icon=""
+process_icon_fg="#464646"
 tmux_sessions_icon_fg="#660104"
 WindowInfo="#[fg=$tmux_sessions_icon_fg]$tmux_sessions_icon #[fg=$tmux_curr_session_fg,bold]#{window_index}#[fg=$tmux_sessions_total]╱#{session_windows}"
-ProcessInfo="#[fg=$tmux_sessions_icon_fg]$process_icon #[fg=$tmux_curr_session_fg,bold]#[fg=$tmux_sessions_total]#{pane_current_command}"
+ProcessInfo="#[fg=$process_icon_fg]$process_icon #[fg=$tmux_curr_session_fg,bold]#[fg=$tmux_sessions_total]#{pane_current_command}"
 
 
 # ---------------

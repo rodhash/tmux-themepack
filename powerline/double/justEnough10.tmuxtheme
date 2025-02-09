@@ -48,8 +48,8 @@ cal_icon=''
 nodejs_icon=""
 pyright_icon=""
 nvim_icon=""
-pref_icon="󰳽 "
-copy_icon="  " # 󰏝
+pref_icon="󰳽"
+copy_icon="󰏝 " # 󰏝
 sync_icon="╱╱"
 blk1_icon_b=''
 blk1_pre_icon=''
@@ -130,16 +130,16 @@ pre_index_fg=#4f0000
 index_fg_style='#I'
 index_fg_style_inactive=' #I'
 inactive_term_fg=#282828
-blk1_pre_icon_fg=#a84ac9
+blk1_pre_icon_fg=#878700
 blk1_icon_b_fg_style=bold
 bell_fg_alert_icon=#cd0000
 namespace_icon_fg=#fe0000
-session_fg=#303030
+session_fg=#900000
 nodejs_fg=#878700
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#646608
-blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold,bg=$first_bg] #[fg=$session_fg]#{session_windows}"
+blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold,bg=$first_bg] #[fg=$session_fg]#{}"
 
 # Inactive panes
 inactive_pane_bubble_bg=#181818
@@ -153,7 +153,7 @@ set-option -g status-style fg=#1c1c1c,bg=default
 
 
 # Bubble style
-set -g status-left "#[fg=$first_bg]$active_term_left_sep#[bg=$first_bg]#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}}},bg=#{},$blk1_icon_style]#[fg=$blk1_bg,bg=default]$blk1_left_sep#[bg=$first_bg] #[bg=$first_bg] #[fg=$blk1_pre_icon_fg,bg=$first_bg]$blk1_pre_icon#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$pref_icon_default_fg}}},bg=#{},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style,bg=$first_bg]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=default]#[fg=$first_bg]$active_term_right_sep"
+set -g status-left "#[fg=$first_bg]$active_term_left_sep_inv#[bg=$first_bg]#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}}},bg=#{},$blk1_icon_style]#[fg=$blk1_bg,bg=default]#[bg=$first_bg] #[bg=$first_bg] #[fg=$blk1_pre_icon_fg,bg=$first_bg,bold]$blk1_pre_icon#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$pref_icon_default_fg}}},bg=#{},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style,bg=$first_bg]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=default]#[fg=$first_bg]$active_term_right_sep_inv "
 
 # Right side of status bar
 set -g status-right-style bg=colour233,fg=colour243

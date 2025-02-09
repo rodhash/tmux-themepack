@@ -1,0 +1,254 @@
+# vim: ft=tmux
+#
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+# -----------------------------------------------------------------------------
+
+
+
+# -----------------------------------------------------
+#
+# "justEnough" theme
+# Created by rodhash <jackdaw-orbits-0s@icloud.com>
+#
+# -----------------------------------------------------
+
+
+
+# ------------------
+#  {{{ Requirements
+# ------------------
+# 1. Add the below scripts to "~/.local/bin", a copy or symlink
+# .. or add the scripts path into PATH variable
+
+
+
+# --------------------------
+#  {{{ Indicators Scripts
+# --------------------------
+tpm_updates="tmux_tpm_updates.sh"
+vim_counter="tmux_editor_counter.sh"
+node_counter="nodejs_counter.sh"
+pyright_counter="pyright_counter.sh"
+mason_updates="tmux_mason_updates.sh"
+zap_plugins_updates="tmux_zap_updates.sh"
+zsh_plugins_updates="tmux_omz_plugin_updates.sh"
+
+
+# ------------------------
+#  {{{ Indicators icons
+# ------------------------
+separator=""
+cal_icon=''
+nodejs_icon=""
+pyright_icon=""
+nvim_icon=""
+pref_icon="󰳽 "
+copy_icon="  " # 󰏝
+sync_icon="╱╱"
+blk1_icon_b=''
+blk1_pre_icon=''
+blk1_left_sep=' '
+blk1_right_sep=' '
+active_icon='' #  ●
+alertIcon='󰭺 ' # 
+arrowUpInactive='⇧' # 󰬭 ⇪ ﬕ   󰹍
+inactive_icon=''
+pref_icon_default_fg=#a80000
+active_term_left_sep=''
+active_term_right_sep=''
+active_term_left_sep_inv=''
+active_term_right_sep_inv=''
+active_pane_left_sep=''
+active_pane_right_sep=''
+sessionName_left_sep=''
+sessionName_right_sep=''
+sessionGlyph=''
+sessionGlyphFg=#fe0000
+
+# {{{ No extra spacing?
+arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥
+PanearrowUpActive='󰜷'
+pre_index_fg_style='' #   ﭲ ﲵ 
+
+
+# -----------------------
+#  Colors: border line
+# -----------------------
+gray=colour238
+black=colour232
+task_bar=default
+activeBorderFg=#a80000
+inactiveBorderFg=#252525
+
+
+# ------------------
+#  {{{ New colors
+# ------------------
+zap_fg=#5f00ff
+tmux_fg=#8700ff
+mason_fg=#990000
+omz_plugin_fg=#372818
+first_bg=#3b0001
+
+time_h=#fe0000
+time_m=#000000
+cal_fg=#8b0000
+copy_bg=#585859
+sync_bg=#585859
+pref_fg=#fff000
+copy_fg=#b80000
+sync_fg=#ff00ff
+blk1_bg=default
+time_bg=#303030
+blk3_vim_fg=#4e5008
+pref_bg=#fff000
+bell_fg=#9f0207
+blk1_bg=default
+cons_bg=$task_bar
+blk1_icon_style=bold
+upArrowColor=#4f0002
+blk1_icon_fg=$blk2_bg
+active_icon_fg=#7b00c6
+blk1_icon_b_fg=#fe0000
+inactive_icon_fg=#3b0001
+curr_up_arrow_fg=#a9a001
+active_bubble_bg=#930003
+active_pane_bubble_bg1=#3b0000
+active_pane_bubble_bg2=#181818
+pane_curr_up_arrow_fg=#a80000
+active_bubble_fg=#000000
+pane_active_bubble_fg=#fff000
+pane_index_fg=#5f5fff
+index_fg=#303030
+pre_index_fg=#4f0000
+index_fg_style='#I'
+index_fg_style_inactive=' #I'
+inactive_term_fg=#282828
+blk1_pre_icon_fg=#a84ac9
+blk1_icon_b_fg_style=bold
+bell_fg_alert_icon=#cd0000
+namespace_icon_fg=#fe0000
+session_fg=#303030
+nodejs_fg=#878700
+pyright_fg=#8700ff
+pyright_icon_fg=#7b00c6
+nvim_fg=#646608
+blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold,bg=$first_bg] #[fg=$session_fg]#{session_windows}"
+
+# Inactive panes
+inactive_pane_bubble_bg=#181818
+inactive_pane_index_fg=#3a3a3a
+inactive_pane_fg=#7b00c6
+zoomed_icon_fg=#660104
+
+
+set -g status-interval 2
+set-option -g status-style fg=#1c1c1c,bg=default
+
+
+# Bubble style
+set -g status-left "#[fg=$first_bg]$active_term_left_sep#[bg=$first_bg]#[fg=#{?client_prefix,$pref_bg,#{?pane_in_mode,$copy_bg,#{?pane_synchronized,$sync_bg,$cons_bg}}},bg=#{}]#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$blk1_icon_fg}}},bg=#{},$blk1_icon_style]#[fg=$blk1_bg,bg=default]$blk1_left_sep#[bg=$first_bg] #[bg=$first_bg] #[fg=$blk1_pre_icon_fg,bg=$first_bg]$blk1_pre_icon#[fg=#{?client_prefix,$pref_fg,#{?pane_in_mode,$copy_fg,#{?pane_synchronized,$sync_fg,$pref_icon_default_fg}}},bg=#{},$blk1_icon_style]#{?client_prefix,$pref_icon ,#{?pane_in_mode,$copy_icon,#{?pane_synchronized,$sync_icon ,$blk1_icon}}}#[fg=$blk1_icon_b_fg,$blk1_icon_b_fg_style,bg=$first_bg]$blk1_icon_b #[fg=#{?client_prefix,$blk1_bg,#{?pane_in_mode,$blk1_bg,#{?pane_synchronized,$blk1_bg,$blk1_bg}}},bg=default]#[fg=$first_bg]$active_term_right_sep"
+
+# Right side of status bar
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+# status-right + prefix highlight
+set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
+set -g @prefix_highlight_prefix_prompt ' '
+
+
+#   Right side
+# -----------------
+set -g status-right "#[fg=$tmux_fg,bg=default,bold]#{pomodoro_status} #[fg=$tmux_fg,bg=default,bold]#( . $tpm_updates ) #[fg=$omz_plugin_fg,bg=default]#( . $zsh_plugins_updates)#[fg=$mason_fg,bg=default]#( . $mason_updates)#[fg=$zap_fg,bg=default]#(. $zap_plugins_updates)#[bg=default,fg=$pyright_icon_fg,nobold]$pyright_icon#[bg=default,fg=$pyright_fg,bold]#($pyright_counter)#[bg=default,fg=$blk3_vim_fg,nobold]$nodejs_icon#[bg=default,fg=$nodejs_fg,bold]#($node_counter)#[bg=default,fg=$blk3_vim_fg]$nvim_icon#[bg=default,fg=$nvim_fg,bold]#($vim_counter)#[fg=$cal_fg,bg=default]$cal_icon #[fg=#353535,bold]%m╱#[fg=#8b0106,bold]%d#[fg=$time_bg,bg=default] $active_term_left_sep_inv#[bg=$time_bg] #[fg=#fe0000,bg=$time_bg,bold]#[fg=$time_h,bold]%H#[fg=$time_m,bold]:%M#[bg=$time_bg] #[fg=$time_bg,bg=default]$active_term_right_sep_inv"
+
+
+# ---------------------------------
+# Window status (inactive window)
+# ---------------------------------
+setw -g window-status-bell-style fg=colour1,bg=colour8
+set -g window-status-format "#{?window_bell_flag,#[bg=default],#[bg=]}#[fg=$inactive_pane_bubble_bg]$active_term_left_sep #[fg=$inactive_pane_index_fg,bg=$inactive_pane_bubble_bg,bold]$index_fg_style_inactive#[fg=$inactive_pane_fg,bold]#{?window_bell_flag,#[bg=$inactive_pane_bubble_bg],#[bg=]}#{?window_bell_flag,#[fg=],#[fg=]}#{?window_bell_flag,#[fg=],#[bg=$inactive_pane_bubble_bg]}$separator #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,$gray,colour9},$gray}]#{?window_bell_flag,#[bg=$inactive_pane_bubble_bg],#[bg=$inactive_pane_bubble_bg]}#{?window_zoomed_flag,#[fg=$zoomed_icon_fg],#[fg=]}#{?window_zoomed_flag, $arrowUpInactive,} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,$inactive_pane_bubble_bg,default}]#{?window_bell_flag,#[fg=$bell_fg_alert_icon],#[bg=$inactive_pane_bubble_bg]}#{?window_bell_flag,$alertIcon,#[fg=$inactive_icon_fg]$inactive_icon#[fg=$inactive_term_fg]}#[fg=$inactive_pane_bubble_bg,bg=default]$active_term_right_sep"
+
+# ---------------------------------
+# Window status (Active window)
+# ---------------------------------
+set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep #[fg=$pre_index_fg,bg=$active_bubble_bg,bold]$pre_index_fg_style#[fg=$index_fg,bg=$active_bubble_bg,bold] $index_fg_style#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg]#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep"
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+# set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep"
+
+
+# --------------------------
+#    Addons for Top pane
+# --------------------------
+PidGreen="#707208"
+pidFg="#[fg=#404040,nobold]"
+pid="#{pane_pid}"
+pidIcon=" "
+pidIconFg="#a80000"
+ProcessID="#[fg=$pidIconFg]$pidIcon #[fg=$PidGreen,bold]$pid"
+
+tmux_curr_session_fg="#464646"
+tmux_sessions_total="#303030"
+tmux_sessions_icon=" "
+process_icon=""
+process_icon_fg="#464646"
+tmux_sessions_icon_fg="#660104"
+WindowInfo="#[fg=$tmux_sessions_icon_fg]$tmux_sessions_icon #[fg=$tmux_curr_session_fg,bold]#{window_index}#[fg=$tmux_sessions_total]╱#{session_windows}"
+ProcessInfo="#[fg=$process_icon_fg]$process_icon #[fg=$tmux_curr_session_fg,bold]#[fg=$tmux_sessions_total]#{pane_current_command}"
+
+
+# ---------------
+#    Top Pane
+# ---------------
+set -g pane-border-style "fg=#{?pane_in_mode,colour4,#{?synchronize-panes,$sync_fg,$inactiveBorderFg}}"
+set -g pane-border-status top
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$pane_index_fg]#{pane_index}╱ #[fg=$pane_active_bubble_fg]#{pane_current_command}#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+#{pane_index}╱ #[fg=$pane_active_bubble_fg]#{pane_current_command}
+
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=#cd0000]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+# Adding an extra block w/ process name
+set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$pane_curr_up_arrow_fg],}#{?window_zoomed_flag, $PanearrowUpActive,}#[bg=$active_pane_bubble_bg1,nobold] #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+
+# Active pane border
+set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,$sync_fg,$activeBorderFg}}"
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=black
+
+# Command message
+set -g message-command-style bg=colour233,fg=black
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

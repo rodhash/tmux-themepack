@@ -72,7 +72,7 @@ sessionGlyph=''
 sessionGlyphFg=#fe0000
 
 # {{{ No extra spacing?
-arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥
+arrowUpActive='⇧' #  󰬬 ⇧ ﬕ  󰧥
 PanearrowUpActive='󰜷'
 pre_index_fg_style='' #   ﭲ ﲵ 
 

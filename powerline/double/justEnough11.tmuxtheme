@@ -57,7 +57,7 @@ blk1_left_sep=' '
 blk1_right_sep=' '
 active_icon='' #  ●
 alertIcon='󰭺 ' # 
-arrowUpInactive='⇧' # 󰬭 ⇪ ﬕ   󰹍
+arrowUpInactive='󰬭' # 󰬭 ⇪ ﬕ   󰹍
 inactive_icon=''
 pref_icon_default_fg=#a80000
 active_term_left_sep=''
@@ -72,7 +72,7 @@ sessionGlyph=''
 sessionGlyphFg=#fe0000
 
 # {{{ No extra spacing?
-arrowUpActive='⇧' #  󰬬 ⇧ ﬕ  󰧥
+arrowUpActive='' #  󰬬 ⇧ ﬕ  󰧥
 PanearrowUpActive='󰜷'
 pre_index_fg_style='' #   ﭲ ﲵ 
 
@@ -118,7 +118,7 @@ blk1_icon_fg=$blk2_bg
 active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
-curr_up_arrow_fg=#a9a001
+curr_up_arrow_fg=#3b0001
 active_bubble_bg=#930003
 active_pane_bubble_bg1=#3b0000
 active_pane_bubble_bg2=#181818
@@ -149,7 +149,7 @@ currDate="#[fg=$dateBG]#[bg=$dateBG]#[bg=$dateBG]#[fg=$dateSymbolFG]$cal_icon
 inactive_pane_bubble_bg=#181818
 inactive_pane_index_fg=#3a3a3a
 inactive_pane_fg=#7b00c6
-zoomed_icon_fg=#660104
+zoomed_icon_fg=#353535
 
 
 set -g status-interval 2

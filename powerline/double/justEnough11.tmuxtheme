@@ -118,7 +118,7 @@ blk1_icon_fg=$blk2_bg
 active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
-curr_up_arrow_fg=#3b0001
+curr_up_arrow_fg=#1e0a08
 active_bubble_bg=#930003
 active_pane_bubble_bg1=#3b0000
 active_pane_bubble_bg2=#181818
@@ -149,7 +149,7 @@ currDate="#[fg=$dateBG]#[bg=$dateBG]#[bg=$dateBG]#[fg=$dateSymbolFG]$cal_icon
 inactive_pane_bubble_bg=#181818
 inactive_pane_index_fg=#3a3a3a
 inactive_pane_fg=#7b00c6
-zoomed_icon_fg=#353535
+zoomed_icon_fg=#490d08
 
 
 set -g status-interval 2

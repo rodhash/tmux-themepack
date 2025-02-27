@@ -56,7 +56,7 @@ blk1_pre_icon=''
 blk1_left_sep=' '
 blk1_right_sep=' '
 active_icon='' #  ●
-alertIcon='󰭺 ' # 
+alertIcon='  ' # 
 arrowUpInactive='󰬭' # 󰬭 ⇪ ﬕ   󰹍
 inactive_icon=''
 pref_icon_default_fg=#a80000
@@ -149,7 +149,7 @@ currDate="#[fg=$dateBG]#[bg=$dateBG]#[bg=$dateBG]#[fg=$dateSymbolFG]$cal_icon
 inactive_pane_bubble_bg=#181818
 inactive_pane_index_fg=#3a3a3a
 inactive_pane_fg=#7b00c6
-zoomed_icon_fg=#490d08
+zoomed_icon_fg=#690906
 
 
 set -g status-interval 2

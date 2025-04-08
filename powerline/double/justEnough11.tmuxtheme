@@ -136,10 +136,10 @@ blk1_icon_b_fg_style=bold
 bell_fg_alert_icon=#cd0000
 namespace_icon_fg=#fe0000
 session_fg=#900000
-nodejs_fg=#878700
+nodejs_fg=#707208
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
-nvim_fg=#646608
+nvim_fg=#51530d
 blk1_icon="#[fg=$namespace_icon_fg,bg=default,bold,bg=$first_bg] #[fg=$session_fg]#{}"
 dateBG=#181818
 dateSymbolFG=#a80000

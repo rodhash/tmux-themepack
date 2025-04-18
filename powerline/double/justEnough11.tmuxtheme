@@ -1,4 +1,4 @@
-# vim: ft=tmux
+# vim: ft=sh
 #
 # Powerline Double Cyan - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
@@ -64,10 +64,22 @@ active_term_left_sep=''
 active_term_right_sep=''
 active_term_left_sep_inv=''
 active_term_right_sep_inv=''
+
+# active_pane_left_sep=''
+# active_pane_right_sep=''
+# sessionName_left_sep=''
+# sessionName_right_sep=''
+
 active_pane_left_sep=' '
 active_pane_right_sep=''
 sessionName_left_sep=''
 sessionName_right_sep=''
+
+active_pane_left_sep=''
+active_pane_right_sep=' '
+sessionName_left_sep=''
+sessionName_right_sep=''
+
 sessionGlyph=''
 sessionGlyphFg=#fe0000
 
@@ -239,7 +251,16 @@ set -g pane-border-status top
 # set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
 
 # Reduce to 3 + reduce length
-set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep#[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep   "
+set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep#[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+# full
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep "
+
+# keep 4 w/ some spacing
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep ── #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep  #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $WindowInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep  #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep  "
+
+# reduce to 3
+# set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep  #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $pidFg$ProcessID #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep #[fg=$active_pane_bubble_bg2]$active_pane_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg2,bold]$separator $ProcessInfo #[fg=$active_pane_bubble_bg2,bg=default,nobold]$active_pane_right_sep  "
 
 # Reduce to 1
 # set -g pane-border-format " #[fg=$active_pane_bubble_bg1]$sessionName_left_sep#[fg=$pane_active_bubble_fg,bg=$active_pane_bubble_bg1,bold]$separator #[fg=$sessionGlyphFg]$sessionGlyph #[fg=$pane_index_fg]#S#[fg=colour160,bold]  #[fg=$active_pane_bubble_bg1,bg=default,nobold]$sessionName_right_sep "

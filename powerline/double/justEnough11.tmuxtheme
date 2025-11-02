@@ -147,7 +147,7 @@ nodejs_fg=#707208
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#51530d
-tabs_fg=#6600a6
+tabs_fg=#a80000
 blk1_icon="#[fg=${namespace_icon_fg},bg=default,bold,bg=${first_bg}] #[fg=${session_fg}]#{}"
 dateBG=#181818
 dateSymbolFG=#a80000

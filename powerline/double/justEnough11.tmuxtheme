@@ -52,8 +52,11 @@ pyright_icon=""
 nvim_icon=""
 pref_icon="󰳽"
 copy_icon="󰏝 " # 󰏝
-sync_icon="╱╱"
+pref_icon=""  # 
+copy_icon="󱆢 " # 󰏝  
+sync_icon=""  # 
 blk1_icon_b=''
+namespaceIcon='' #    
 blk1_pre_icon=''
 active_icon='' #  ●
 alertIcon='  ' # 
@@ -116,6 +119,10 @@ cal_fg=#8b0000
 copy_bg=#585859
 sync_bg=#585859
 pref_fg=#fff000
+prefixFg=#a3a30c
+copyFG=#707208
+syncFg=#f95df9
+
 copy_fg=#b80000
 sync_fg=#ff00ff
 blk1_bg=default
@@ -143,14 +150,17 @@ inactive_term_fg=#282828
 blk1_pre_icon_fg=#878700
 blk1_icon_b_fg_style=bold
 bell_fg_alert_icon=#cd0000
-namespace_icon_fg=#fe0000
+namespace_icon_fg=#d20000
 session_fg=#900000
 nodejs_fg=#707208
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#51530d
 tabs_fg=#a80000
-blk1_icon="#[fg=${namespace_icon_fg},bg=default,bold,bg=${first_bg}] #[fg=${session_fg}]#{}"
+blk1_icon="#[fg=${namespace_icon_fg},bg=default,bold,bg=${first_bg}]${namespaceIcon} #[fg=${session_fg}]#{}"
+# blk1_icon="#[fg=#{?client_prefix,#fe0000,#{?pane_in_mode,#fff000,#{?pane_synchronized,#8700ff,#cccccc}}}] #[fg=${session_fg}]#{}"
+
+
 dateBG=#181818
 dateSymbolFG=#a80000
 currDate="#[fg=${dateBG}]${active_term_left_sep} #[bg=${dateBG}]#[bg=${dateBG}]#[fg=${dateSymbolFG}]${cal_icon} #[fg=${month_fg},bold]%b╱#[fg=${day_fg},bold]%d"
@@ -167,7 +177,17 @@ set-option -g status-style fg=#1c1c1c,bg=default
 
 
 # Bubble style
-set -g status-left "#[fg=${first_bg}]${active_term_left_sep_inv}#[bg=${first_bg}]#[fg=#{?client_prefix,${pref_bg},#{?pane_in_mode,${copy_bg},#{?pane_synchronized,${sync_bg},${cons_bg}}}},bg=#{}]#[fg=#{?client_prefix,${pref_fg},#{?pane_in_mode,${copy_fg},#{?pane_synchronized,${sync_fg},""}}},bg=#{},${blk1_icon_style}]#[fg=${blk1_bg},bg=default]#[bg=${first_bg}] #[bg=${first_bg}] #[fg=${blk1_pre_icon_fg},bg=${first_bg},bold]${blk1_pre_icon}#[fg=#{?client_prefix,${pref_fg},#{?pane_in_mode,${copy_fg},#{?pane_synchronized,${sync_fg},${pref_icon_default_fg}}}},bg=#{},${blk1_icon_style}]#{?client_prefix,${pref_icon} ,#{?pane_in_mode,${copy_icon},#{?pane_synchronized,${sync_icon} ,${blk1_icon}}}}#[fg=${blk1_icon_b_fg},${blk1_icon_b_fg_style},bg=${first_bg}]${blk1_icon_b} #[fg=#{?client_prefix,${blk1_bg},#{?pane_in_mode,${blk1_bg},#{?pane_synchronized,${blk1_bg},${blk1_bg}}}},bg=default]#[fg=${first_bg}]${active_term_right_sep_inv} "
+set -g status-left "#[fg=${first_bg}]${active_term_left_sep_inv}\
+\
+#[bg=${first_bg}]  #[fg=${blk1_pre_icon_fg},bg=${first_bg},bold]${blk1_pre_icon}\
+
+#{?client_prefix,#[fg=${prefixFg}],#{?pane_in_mode,#[fg=${copyFG}],#{?pane_synchronized,#[fg=${syncFg}],#[fg=white]}}}\
+
+#{?client_prefix,${pref_icon} ,#{?pane_in_mode,${copy_icon},#{?pane_synchronized,${sync_icon} ,${blk1_icon}}}}\
+\
+#[fg=${blk1_icon_b_fg},${blk1_icon_b_fg_style},bg=${first_bg}bg=default]${blk1_icon_b} \
+\
+#[bg=default]#[fg=${first_bg}]${active_term_right_sep_inv}"
 
 # Right side of status bar
 set -g status-right-style bg=colour233,fg=colour243

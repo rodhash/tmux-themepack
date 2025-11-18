@@ -84,8 +84,8 @@ active_pane_right_sep=' '
 sessionName_left_sep=''
 sessionName_right_sep=''
 
-sessionGlyph=''
-sessionGlyphFg=#fe0000
+sessionGlyph='' #      
+sessionGlyphFg=#fe8021
 
 # {{{ No extra spacing?
 arrowUpInactive='' # 󰬭 ⇪ ﬕ   󰹍

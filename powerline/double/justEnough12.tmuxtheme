@@ -42,6 +42,7 @@ zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 nvim_tabstop="tmux_tabstop.sh"
 gitlab_mux_counter="tmux_gitlabMuxCounter.sh"
 github_mux_counter="tmux_githubMuxCounter.sh"
+sshKey_counter="tmux_sshKeysChecker.sh"
 
 
 # ------------------------
@@ -239,6 +240,7 @@ set -g status-justify left
 # --------------------------
 #    Addons for Top pane
 # --------------------------
+darkerBG="#090909"
 PidGreen="#454545"
 pidFg="#[fg=#404040,nobold]"
 pid="#{pane_pid}"
@@ -246,11 +248,15 @@ pidIcon=""
 pidIconFg="#bc4202"
 ProcessID="#[fg=${pidIconFg}]${pidIcon} #[fg=${PidGreen},bold]${pid}"
 
-tmux_curr_session_fg="#464646"
-tmux_sessions_total="#303030"
-process_icon=""
-process_icon_fg="#464646"
-ProcessInfo="#[fg=${process_icon_fg}]${process_icon} #[fg=${tmux_curr_session_fg},bold]#[fg=${tmux_sessions_total}]#{pane_current_command}"
+firstBG=${active_pane_bubble_bg1}
+secondBG=${darkerBG}
+thirdBG=${active_pane_bubble_bg2}
+fourthBG=${active_pane_bubble_bg2}
+
+topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep}"
+topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
+topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]#( . ${gitlab_mux_counter})#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
+topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]#( . ${github_mux_counter})#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
 
 
 # ---------------
@@ -272,8 +278,15 @@ set -g pane-border-status top
 # set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
 
 # gitlab + github separated
-set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}${topSecondBlock}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
 # set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]#( . ${gitlab_mux_counter})#[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]#( . ${github_mux_counter})#[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}  "
+
+# Add ssh key checker
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator}#( . ${sshKey_counter} )#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+
+# Componentizing top bar
+set -g pane-border-format " ${topFirstBlock}${topSecondBlock}${topThirdBlock}${topFourthBlock}  "
 
 
 # Active pane border

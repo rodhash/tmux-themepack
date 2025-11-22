@@ -42,7 +42,7 @@ zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 nvim_tabstop="tmux_tabstop.sh"
 gitlab_mux_counter="tmux_gitlabMuxCounter.sh"
 github_mux_counter="tmux_githubMuxCounter.sh"
-sshKey_counter="tmux_sshKeysChecker.sh"
+# sshKey_counter="tmux_sshKeysChecker.sh"
 
 
 # ------------------------
@@ -250,8 +250,8 @@ ProcessID="#[fg=${pidIconFg}]${pidIcon} #[fg=${PidGreen},bold]${pid}"
 
 firstBG=${active_pane_bubble_bg1}
 secondBG=${darkerBG}
-thirdBG=${active_pane_bubble_bg2}
-fourthBG=${active_pane_bubble_bg2}
+thirdBG=${darkerBG}
+fourthBG=${darkerBG}
 
 topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep}"
 topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"

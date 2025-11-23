@@ -89,8 +89,8 @@ sessionGlyph='' #      
 sessionGlyphFg=#fe8021
 
 # {{{ No extra spacing?
-arrowUpInactive='' # 󰬭 ⇪ ﬕ   󰹍
-arrowUpActive='' #  󰬬 ⇧ ﬕ  󰧥 
+arrowUpInactive='' # 󰬭 ⇪ ﬕ   󰹍 
+arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥  
 pre_index_fg_style='' #   ﭲ ﲵ 
 
 
@@ -241,7 +241,7 @@ set -g status-justify left
 #    Addons for Top pane
 # --------------------------
 darkerBG="#090909"
-PidGreen="#454545"
+PidGreen="#303030"
 pidFg="#[fg=#404040,nobold]"
 pid="#{pane_pid}"
 pidIcon=""

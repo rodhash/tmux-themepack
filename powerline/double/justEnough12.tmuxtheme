@@ -1,25 +1,13 @@
 # vim: ft=sh
-#
 # Powerline Double Cyan - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
-#
-# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
-#
-# Requires terminal to be using a powerline compatible font, find one here:
-# https://github.com/Lokaltog/powerline-fonts
 # -----------------------------------------------------------------------------
-
-
-
 # -----------------------------------------------------
 #
 # "justEnough" theme
 # Created by rodhash <jackdaw-orbits-0s@icloud.com>
 #
 # -----------------------------------------------------
-
-
-
 # ------------------
 #  {{{ Requirements
 # ------------------
@@ -40,8 +28,8 @@ mason_updates="tmux_mason_updates.sh"
 zap_plugins_updates="tmux_zap_updates.sh"
 zsh_plugins_updates="tmux_omz_plugin_updates.sh"
 nvim_tabstop="tmux_tabstop.sh"
-gitlab_mux_counter="tmux_gitlabMuxCounter.sh"
-github_mux_counter="tmux_githubMuxCounter.sh"
+# gitlab_mux_counter="tmux_gitlabMuxCounter.sh"
+# github_mux_counter="tmux_githubMuxCounter.sh"
 # sshKey_counter="tmux_sshKeysChecker.sh"
 
 
@@ -138,7 +126,7 @@ blk1_icon_style=bold
 active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
-curr_up_arrow_fg=#3b0001
+curr_up_arrow_fg=#ff7f50
 active_bubble_bg=#930003
 active_pane_bubble_bg1=#3b0000
 active_pane_bubble_bg2=#121212
@@ -146,7 +134,7 @@ vcsBG="#101010"
 active_bubble_fg=#000000
 pane_active_bubble_fg=#fff000
 pane_index_fg=#5f5fff
-index_fg=#303030
+index_fg=#2a1f12
 pre_index_fg=#4f0000
 index_fg_style='#I'
 index_fg_style_inactive=' #I'
@@ -253,11 +241,19 @@ secondBG=${darkerBG}
 thirdBG=${darkerBG}
 fourthBG=${darkerBG}
 
+# topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep}"
+# topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
+# topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]#( . ${gitlab_mux_counter})#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
+# topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]#( . ${github_mux_counter})#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+
+github="#{E:githubCounter} "
+gitlab="#{E:gitlabCounter} "
+
 topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep}"
 topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
 topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]#( . ${gitlab_mux_counter})#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
-topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]#( . ${github_mux_counter})#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
-
+topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]${gitlab}#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
+topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${github}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
 
 # ---------------
 #    Top Pane

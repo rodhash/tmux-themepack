@@ -23,7 +23,7 @@ fzf_updates="tmux_fzf_updates.sh"
 tpm_updates="tmux_tpm_updates.sh"
 # vim_counter="tmux_editor_counter.sh"
 # node_counter="nodejs_counter.sh"
-pyright_counter="pyright_counter.sh"
+# pyright_counter="pyright_counter.sh"
 mason_updates="tmux_mason_updates.sh"
 zap_plugins_updates="tmux_zap_updates.sh"
 zsh_plugins_updates="tmux_omz_plugin_updates.sh"
@@ -197,10 +197,11 @@ set -g @prefix_highlight_prefix_prompt ' '
 
 # set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[bg=default,fg=${tabs_fg},bold]#( . ${nvim_tabstop})#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} ) #[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]#(${pyright_counter})#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]#(${node_counter})#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]#(${vim_counter})#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
 
+pyright_counter="#{E:pyrightComp}"
 nvim_tabstop="#{E:tabstopComp}"
 node_counter="#{E:nodejsCounterComp}"
 vim_counter="#{E:nvimComp}"
-set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[bg=default,fg=${tabs_fg},bold]${nvim_tabstop}#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} )#[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]#(${pyright_counter})#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]${node_counter}#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]${vim_counter}#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
+set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[bg=default,fg=${tabs_fg},bold]${nvim_tabstop}#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} )#[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]${pyright_counter}#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]${node_counter}#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]${vim_counter}#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
 
 
 # ---------------------------------

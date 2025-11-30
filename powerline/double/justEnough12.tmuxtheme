@@ -208,7 +208,7 @@ mason_updates=""
 zap_plugins_updates="#{E:zapPatchesComp}"
 zsh_plugins_updates="#{E:omzPatchesComp}"
 
-tabstopComp="#[bg=default,fg=${tabs_fg},bold]${nvim_tabstop}"
+# tabstopComp="#[bg=default,fg=${tabs_fg},bold]${nvim_tabstop}"
 tpmComp="#[fg=${tmux_fg},bg=default,bold]${tpm_updates}"
 fzfComp="#[fg=${tmux_fg},bg=default,bold]${fzf_updates}"
 zshComp="#[fg=${omz_plugin_fg},bg=default]${zsh_plugins_updates}"
@@ -223,7 +223,8 @@ dateComp="#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}]${ac
 timeComp="#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
 pomodoroComp="#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status} "
 
-set -g status-right "${tabstopComp}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${pomodoroComp}${dateComp}${timeComp}"
+# set -g status-right "${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${pomodoroComp}${dateComp}${timeComp}"
+set -g status-right "${pomodoroComp}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${dateComp}${timeComp}"
 
 
 # ---------------------------------
@@ -282,6 +283,12 @@ topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble
 topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
 topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]${gitlab}#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
 topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${github}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+topTabStop="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${nvim_tabstop}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+
+# Experimenting w/ top bar status
+# topThirdBlock=""
+# topFourthBlock=""
+# topTabStop="  ${nvimComp} ${nodejsComp} ${nodecounterComp}${pyrightComp}${pythonComp}${gitlab}${github}${nvim_tabstop}"
 
 # ---------------
 #    Top Pane
@@ -310,7 +317,7 @@ set -g pane-border-status top
 # set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator}#( . ${sshKey_counter} )#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
 
 # Componentizing top bar
-set -g pane-border-format " ${topFirstBlock}${topSecondBlock}${topThirdBlock}${topFourthBlock}  "
+set -g pane-border-format " ${topFirstBlock}${topSecondBlock}${topThirdBlock}${topFourthBlock}${topTabStop}  "
 
 
 # Active pane border

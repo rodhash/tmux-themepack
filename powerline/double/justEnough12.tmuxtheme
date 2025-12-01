@@ -283,7 +283,7 @@ topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble
 topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
 topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]${gitlab}#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
 topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${github}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
-topTabStop="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${nvim_tabstop}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+topTabStop=""
 
 # Experimenting w/ top bar status
 # topThirdBlock=""

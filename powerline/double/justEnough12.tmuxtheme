@@ -52,7 +52,7 @@ blk1_pre_icon=''
 active_icon='' #  ●   
 alertIcon=' ' #   
 inactive_icon=''
-pref_icon_default_fg=#a80000
+# pref_icon_default_fg=#a80000
 active_term_left_sep=''
 active_term_right_sep=''
 active_term_left_sep_inv=''
@@ -63,15 +63,15 @@ active_term_right_sep_inv=''
 # sessionName_left_sep=''
 # sessionName_right_sep=''
 
-active_pane_left_sep=' '
-active_pane_right_sep=''
-sessionName_left_sep=''
-sessionName_right_sep=''
+# active_pane_left_sep=' '
+# active_pane_right_sep=''
+# sessionName_left_sep=''
+# sessionName_right_sep=''
 
-active_pane_left_sep=''
-active_pane_right_sep=' '
-sessionName_left_sep=''
-sessionName_right_sep=''
+# active_pane_left_sep=''
+# active_pane_right_sep=' '
+# sessionName_left_sep=''
+# sessionName_right_sep=''
 
 sessionGlyph='' #      
 sessionGlyphFg=#fe8021
@@ -87,7 +87,7 @@ pre_index_fg_style='' #   ﭲ ﲵ 
 # -----------------------
 gray=colour238
 black=colour232
-task_bar=default
+# task_bar=default
 activeBorderFg=#a80000
 inactiveBorderFg=#252525
 
@@ -107,30 +107,30 @@ time_m=#9400ff
 month_fg=#93231d
 day_fg=#9400ff
 cal_fg=#8b0000
-copy_bg=#585859
-sync_bg=#585859
-pref_fg=#fff000
+# copy_bg=#585859
+# sync_bg=#585859
+# pref_fg=#fff000
 prefixFg=#ff00ff
 copyFG=#ff8700
 syncFg=#f95df9
 
-copy_fg=#b80000
+# copy_fg=#b80000
 sync_fg=#ff00ff
-blk1_bg=default
+# blk1_bg=default
 time_bg=#303030
 blk3_vim_fg=#4e5008
-pref_bg=#fff000
-blk1_bg=default
-cons_bg=${task_bar}
-blk1_icon_style=bold
+# pref_bg=#fff000
+# blk1_bg=default
+# cons_bg=${task_bar}
+# blk1_icon_style=bold
 active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
 curr_up_arrow_fg=#ff7f50
 active_bubble_bg=#930003
 active_pane_bubble_bg1=#3b0000
-active_pane_bubble_bg2=#121212
-vcsBG="#101010"
+# active_pane_bubble_bg2=#121212
+# vcsBG="#101010"
 active_bubble_fg=#000000
 pane_active_bubble_fg=#fff000
 pane_index_fg=#5f5fff
@@ -148,7 +148,7 @@ nodejs_fg=#707208
 pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#51530d
-tabs_fg=#a80000
+# tabs_fg=#a80000
 blk1_icon="#[fg=${namespace_icon_fg}]#[bold]${namespaceIcon} #[fg=${session_fg}]#{}"
 # blk1_icon="#[fg=#{?client_prefix,#fe0000,#{?pane_in_mode,#fff000,#{?pane_synchronized,#8700ff,#cccccc}}}] #[fg=${session_fg}]#{}"
 
@@ -198,7 +198,7 @@ set -g @prefix_highlight_prefix_prompt ' '
 # set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[bg=default,fg=${tabs_fg},bold]#( . ${nvim_tabstop})#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} ) #[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]#(${pyright_counter})#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]#(${node_counter})#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]#(${vim_counter})#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
 
 pyright_counter="#{E:pyrightComp}"
-nvim_tabstop="#{E:tabstopComp}"
+# nvim_tabstop="#{E:tabstopComp}"
 node_counter="#{E:nodejsCounterComp}"
 vim_counter="#{E:nvimComp}"
 

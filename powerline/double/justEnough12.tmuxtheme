@@ -149,7 +149,7 @@ pyright_fg=#8700ff
 pyright_icon_fg=#7b00c6
 nvim_fg=#51530d
 tabs_fg=#a80000
-blk1_icon="#[fg=${namespace_icon_fg},bg=default,bold,bg=${first_bg}]${namespaceIcon} #[fg=${session_fg}]#{}"
+blk1_icon="#[fg=${namespace_icon_fg}]#[bold]${namespaceIcon} #[fg=${session_fg}]#{}"
 # blk1_icon="#[fg=#{?client_prefix,#fe0000,#{?pane_in_mode,#fff000,#{?pane_synchronized,#8700ff,#cccccc}}}] #[fg=${session_fg}]#{}"
 
 

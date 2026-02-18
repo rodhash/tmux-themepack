@@ -32,6 +32,7 @@
 # github_mux_counter="tmux_githubMuxCounter.sh"
 # sshKey_counter="tmux_sshKeysChecker.sh"
 
+set -g pane-border-lines double
 
 # ------------------------
 #  {{{ Indicators icons

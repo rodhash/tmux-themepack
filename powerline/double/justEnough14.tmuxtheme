@@ -1,0 +1,358 @@
+# vim: ft=sh
+# Powerline Double Cyan - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------
+#
+# "justEnough" theme
+# Created by rodhash <jackdaw-orbits-0s@icloud.com>
+#
+# -----------------------------------------------------
+# ------------------
+#  {{{ Requirements
+# ------------------
+# 1. Add the below scripts to "~/.local/bin", a copy or symlink
+# .. or add the scripts path into PATH variable
+
+
+
+# --------------------------
+#  {{{ Indicators Scripts
+# --------------------------
+# fzf_updates="tmux_fzf_updates.sh"
+# tpm_updates="tmux_tpm_updates.sh"
+# vim_counter="tmux_editor_counter.sh"
+# node_counter="nodejs_counter.sh"
+# pyright_counter="pyright_counter.sh"
+# mason_updates="tmux_mason_updates.sh"
+# zap_plugins_updates="tmux_zap_updates.sh"
+# zsh_plugins_updates="tmux_omz_plugin_updates.sh"
+# nvim_tabstop="tmux_tabstop.sh"
+# gitlab_mux_counter="tmux_gitlabMuxCounter.sh"
+# github_mux_counter="tmux_githubMuxCounter.sh"
+# sshKey_counter="tmux_sshKeysChecker.sh"
+
+
+# ------------------------
+#  {{{ Indicators icons
+# ------------------------
+separator=""
+cal_icon='' # 
+nodejs_icon=""
+pyright_icon=""
+nvim_icon=""
+pref_icon="󰳽"
+copy_icon="󰏝 " # 󰏝
+pref_icon=""  # 
+copy_icon=" " # 󰏝   󱆢
+sync_icon=""  # 
+blk1_icon_b=''
+namespaceIcon='' #    
+blk1_pre_icon=''
+active_icon='' #  ●   
+alertIcon=' ' #   
+inactive_icon=''
+# pref_icon_default_fg=#a80000
+active_term_left_sep=''
+active_term_right_sep=''
+active_term_left_sep_inv=''
+active_term_right_sep_inv=''
+
+# active_pane_left_sep=''
+# active_pane_right_sep=''
+# sessionName_left_sep=''
+# sessionName_right_sep=''
+
+# active_pane_left_sep=' '
+# active_pane_right_sep=''
+# sessionName_left_sep=''
+# sessionName_right_sep=''
+
+# active_pane_left_sep=''
+# active_pane_right_sep=' '
+# sessionName_left_sep=''
+# sessionName_right_sep=''
+
+sessionGlyph='' #      
+sessionGlyphFg=#fe8021
+
+# {{{ No extra spacing?
+arrowUpInactive='' # 󰬭 ⇪ ﬕ   󰹍 
+arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥  
+pre_index_fg_style='' #   ﭲ ﲵ 
+
+
+# -----------------------
+#  Colors: border line
+# -----------------------
+gray=colour238
+black=colour232
+# task_bar=default
+activeBorderFg=#a80000
+inactiveBorderFg=#252525
+
+
+# ------------------
+#  {{{ New colors
+# ------------------
+zap_fg=#5f00ff
+tmux_fg=#8700ff
+mason_fg=#990000
+omz_plugin_fg=#372818
+first_bg=#3b0001
+
+# time=#4e5fe3
+time_h=#b50104
+time_m=#9400ff
+month_fg=#93231d
+day_fg=#9400ff
+cal_fg=#8b0000
+# copy_bg=#585859
+# sync_bg=#585859
+# pref_fg=#fff000
+prefixFg=#ff00ff
+copyFG=#ff8700
+syncFg=#f95df9
+
+# copy_fg=#b80000
+sync_fg=#ff00ff
+# blk1_bg=default
+time_bg=#202020
+blk3_vim_fg=#4e5008
+# pref_bg=#fff000
+# blk1_bg=default
+# cons_bg=${task_bar}
+# blk1_icon_style=bold
+active_icon_fg=#7b00c6
+blk1_icon_b_fg=#fe0000
+inactive_icon_fg=#3b0001
+curr_up_arrow_fg=#ff7f50
+active_bubble_bg=#930003
+active_pane_bubble_bg1=#3b0000
+# active_pane_bubble_bg2=#121212
+# vcsBG="#101010"
+active_bubble_fg=#000000
+pane_active_bubble_fg=#fff000
+pane_index_fg=#5f5fff
+index_fg=#2a1f12
+pre_index_fg=#4f0000
+index_fg_style='#I'
+index_fg_style_inactive=' #I'
+inactive_term_fg=#282828
+blk1_pre_icon_fg=#878700
+blk1_icon_b_fg_style=bold
+bell_fg_alert_icon=#b2b12b
+namespace_icon_fg=#d20000
+session_fg=#900000
+nodejs_fg=#707208
+pyright_fg=#8700ff
+pyright_icon_fg=#7b00c6
+nvim_fg=#51530d
+# tabs_fg=#a80000
+blk1_icon="#[fg=${namespace_icon_fg}]#[bold]${namespaceIcon} #[fg=${session_fg}]#{}"
+# blk1_icon="#[fg=#{?client_prefix,#fe0000,#{?pane_in_mode,#fff000,#{?pane_synchronized,#8700ff,#cccccc}}}] #[fg=${session_fg}]#{}"
+
+
+dateBG=#181818
+dateSymbolFG=#a80000
+currDate="#[fg=${dateBG}]${active_term_left_sep} #[bg=${dateBG}]#[bg=${dateBG}]#[fg=${dateSymbolFG}]${cal_icon} #[fg=${month_fg},bold]%b╱#[fg=${day_fg},bold]%d"
+
+# Inactive panes
+inactive_pane_bubble_bg=#181818
+inactive_pane_index_fg=#3a3a3a
+inactive_pane_fg=#7b00c6
+zoomed_icon_fg=#931d16
+
+
+set -g status-interval 2
+set-option -g status-style fg=#1c1c1c,bg=default
+
+
+# Bubble style
+set -g status-left "#[fg=${first_bg}]${active_term_left_sep_inv}\
+\
+#[bg=${first_bg}]  #[fg=${blk1_pre_icon_fg},bg=${first_bg},nobold]${blk1_pre_icon}\
+
+#{?client_prefix,#[fg=${prefixFg}],#{?pane_in_mode,#[fg=${copyFG}],#{?pane_synchronized,#[fg=${syncFg}],#[fg=white]}}}\
+
+#{?client_prefix,${pref_icon} ,#{?pane_in_mode,${copy_icon},#{?pane_synchronized,${sync_icon} ,${blk1_icon}}}}\
+\
+#[fg=${blk1_icon_b_fg},${blk1_icon_b_fg_style},bg=${first_bg}bg=default]${blk1_icon_b} \
+\
+#[bg=default]#[fg=${first_bg}]${active_term_right_sep_inv} "
+
+# Right side of status bar
+set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-length 150
+
+# status-right + prefix highlight
+set -g @prefix_highlight_fg 'colour202' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour232'  # default is 'colour04'
+set -g @prefix_highlight_prefix_prompt ' '
+
+
+#   Right side
+# -----------------
+# set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} ) #[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]#(${pyright_counter})#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]#(${node_counter})#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]#(${vim_counter})#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
+
+# set -g status-right "#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status}#[bg=default,fg=${tabs_fg},bold]#( . ${nvim_tabstop})#[fg=${tmux_fg},bg=default,bold]#( . ${tpm_updates} ) #[fg=${tmux_fg},bg=default,bold]#( . ${fzf_updates} )#[fg=${omz_plugin_fg},bg=default]#( . ${zsh_plugins_updates})#[fg=${mason_fg},bg=default]#( . ${mason_updates})#[fg=${zap_fg},bg=default]#(. ${zap_plugins_updates}) #[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}#[bg=default,fg=${pyright_fg},bold]#(${pyright_counter})#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]#(${node_counter})#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]#(${vim_counter})#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}] ${active_term_left_sep} #[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
+
+pyright_counter="#{E:pyrightComp}"
+# nvim_tabstop="#{E:tabstopComp}"
+node_counter="#{E:nodejsCounterComp}"
+vim_counter="#{E:nvimComp}"
+
+fzf_updates="#{E:fzfPatchesComp}"
+tpm_updates="#{E:tpmPatchesComp}"
+mason_updates=""
+zap_plugins_updates="#{E:zapPatchesComp}"
+zsh_plugins_updates="#{E:omzPatchesComp}"
+
+# tabstopComp="#[bg=default,fg=${tabs_fg},bold]${nvim_tabstop}"
+tpmComp="#[fg=${tmux_fg},bg=default,bold]${tpm_updates}"
+fzfComp="#[fg=${tmux_fg},bg=default,bold]${fzf_updates}"
+zshComp="#[fg=${omz_plugin_fg},bg=default]${zsh_plugins_updates}"
+masonComp="#[fg=${mason_fg},bg=default]${mason_updates}"
+zapComp="#[fg=${zap_fg},bg=default]${zap_plugins_updates} "
+pyrightComp="#[bg=default,fg=${pyright_icon_fg},nobold]${pyright_icon}"
+pythonComp="#[bg=default,fg=${pyright_fg},bold]${pyright_counter}"
+nodejsComp="#[bg=default,fg=${blk3_vim_fg},nobold]${nodejs_icon}#[bg=default,fg=${nodejs_fg},bold]${node_counter}"
+nodecounterComp=""
+nvimComp="#[bg=default,fg=${blk3_vim_fg}]${nvim_icon}#[bg=default,fg=${nvim_fg},bold]${vim_counter}"
+# dateComp="#[fg=${cal_fg},bg=default]${currDate}#[fg=${time_bg},bg=${dateBG}]${active_term_left_sep} "
+# timeComp="#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${time_h},bold]%H:#[fg=${time_m},bold]%M#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
+pomodoroComp="#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status} "
+
+# set -g status-right "${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${pomodoroComp}${dateComp}${timeComp}"
+# set -g status-right "${pomodoroComp}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${dateComp}${timeComp}"
+# ws_fg="#767600"
+ws_fg="#a20aa2"
+# wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
+wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv} "
+
+set -g status-right "${pomodoroComp}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
+
+
+# ---------------------------------
+# Window status (inactive window)
+# ---------------------------------
+setw -g window-status-bell-style fg=colour1,bg=colour8
+set -g window-status-format "#{?window_bell_flag,#[bg=default],#[bg=]}#[fg=${inactive_pane_bubble_bg}]${active_term_left_sep_inv}#[fg=${inactive_pane_index_fg},bg=${inactive_pane_bubble_bg},bold]${index_fg_style_inactive}#[fg=${inactive_pane_fg},bold]#{?window_bell_flag,#[bg=${inactive_pane_bubble_bg}],#[bg=]}#{?window_bell_flag,#[fg=],#[fg=]}#{?window_bell_flag,#[fg=],#[bg=${inactive_pane_bubble_bg}]}${separator} #W#[fg=#{?window_zoomed_flag,#{?window_bell_flag,${gray},colour9},${gray}}]#{?window_bell_flag,#[bg=${inactive_pane_bubble_bg}],#[bg=${inactive_pane_bubble_bg}]}#{?window_zoomed_flag,#[fg=${zoomed_icon_fg}],#[fg=]}#{?window_zoomed_flag, ${arrowUpInactive},} #[fg=#{?window_bell_flag,colour234,default},bg=#{?window_bell_flag,${inactive_pane_bubble_bg},default},nobold]#{?window_bell_flag,#[fg=${bell_fg_alert_icon}],#[bg=${inactive_pane_bubble_bg}]}#{?window_bell_flag,${alertIcon},#[fg=${inactive_icon_fg}]${inactive_icon}#[fg=${inactive_term_fg}]}#[fg=${inactive_pane_bubble_bg},bg=default]${active_term_right_sep_inv} "
+
+# ---------------------------------
+# Window status (Active window)
+# ---------------------------------
+# set -g window-status-current-format "#[fg=${active_icon_fg},bg=default,nobold]${active_icon}#[fg=#830000]#[fg=${active_bubble_bg}]${active_term_left_sep_inv}#[fg=${pre_index_fg},bg=${active_bubble_bg},bold]${pre_index_fg_style}#[fg=${index_fg},bg=${active_bubble_bg},bold] ${index_fg_style}#[fg=${active_bubble_fg},bg=${active_bubble_bg},bold]#[fg=${active_bubble_fg}]#[fg=${active_bubble_fg}]${separator} #[fg=${active_bubble_fg}]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=${curr_up_arrow_fg}],}#{?window_zoomed_flag, ${arrowUpActive},}#[bg=${active_bubble_bg},nobold] #[fg=${active_bubble_bg},bg=default,nobold]${active_term_right_sep_inv}#[fg=#830000] "
+set -g window-status-current-format "#[fg=${active_icon_fg},bg=default,nobold]${active_icon}#[fg=${active_bubble_bg}]${active_term_left_sep_inv}#[fg=${pre_index_fg},bg=${active_bubble_bg},bold]${pre_index_fg_style}#[fg=${index_fg},bg=${active_bubble_bg},bold] ${index_fg_style}#[fg=${active_bubble_fg},bg=${active_bubble_bg},bold]#[fg=${active_bubble_fg}]#[fg=${active_bubble_fg}]${separator} #[fg=${active_bubble_fg}]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=${curr_up_arrow_fg}],}#{?window_zoomed_flag, ${arrowUpActive},}#[bg=${active_bubble_bg},nobold] #[fg=${active_bubble_bg},bg=default,nobold]${active_term_right_sep_inv} "
+
+# Current window status
+set -g window-status-current-style bg=colour39,fg=colour235
+
+# Window with activity status
+set -g window-status-activity-style bg=colour233,fg=colour245
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+# set -g window-status-current-format "#[fg=$active_icon_fg,bg=default,nobold]$active_icon#[fg=$active_bubble_bg]$active_term_left_sep#[fg=$active_bubble_fg,bg=$active_bubble_bg,bold]#[fg=$active_bubble_fg] #I#[fg=$active_bubble_fg]$separator #[fg=$active_bubble_fg]#W#[fg=colour160,bold]#{?window_zoomed_flag,#[fg=$curr_up_arrow_fg],}#{?window_zoomed_flag, $arrowUpActive,}#[bg=$active_bubble_bg,nobold] #[fg=$active_bubble_bg,bg=default,nobold]$active_term_right_sep"
+
+
+# --------------------------
+#    Addons for Top pane
+# --------------------------
+darkerBG="#090909"
+PidGreen="#303030"
+pidFg="#[fg=#404040,nobold]"
+pid="#{pane_pid}"
+pidIcon=""
+pidIconFg="#bc4202"
+ProcessID="#[fg=${pidIconFg}]${pidIcon} #[fg=${PidGreen},bold]${pid}"
+
+firstBG=${active_pane_bubble_bg1}
+secondBG=${darkerBG}
+thirdBG=${darkerBG}
+fourthBG=${darkerBG}
+
+# topFirstBlock="#[fg=${firstBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep}"
+# topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
+# topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]#( . ${gitlab_mux_counter})#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
+# topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]#( . ${github_mux_counter})#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+
+github="#{E:githubCounter}"
+gitlab="#{E:gitlabCounter}"
+
+topFirstBlock="#[fg=${firstBG}]${active_term_left_sep_inv}#[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep_inv}"
+# topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
+# topThirdBlock="#[fg=${thirdBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${thirdBG},bold]${gitlab}#[fg=${thirdBG},bg=default,nobold]${active_term_right_sep}"
+# topFourthBlock="#[fg=${fourthBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${fourthBG},bold]${github}#[fg=${fourthBG},bg=default,nobold]${active_term_right_sep}"
+
+
+# topFirstBlock="#[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg},bold]#S  "
+topSecondBlock="${pidFg}${ProcessID} "
+# topSecondBlock="#[fg=${secondBG}]${active_term_left_sep_inv}#[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep_inv}"
+topThirdBlock="#[fg=${pane_active_bubble_fg},bold]${gitlab}"
+topFourthBlock="#[fg=${pane_active_bubble_fg}]${github}"
+topTabStop=""
+
+# Experimenting w/ top bar status
+# topThirdBlock=""
+# topFourthBlock=""
+# topTabStop="  ${nvimComp} ${nodejsComp} ${nodecounterComp}${pyrightComp}${pythonComp}${gitlab}${github}${nvim_tabstop}"
+
+# ---------------
+#    Top Pane
+# ---------------
+set -g pane-border-style "fg=#{?pane_in_mode,colour4,#{?synchronize-panes,${sync_fg},${inactiveBorderFg}}}"
+set -g pane-border-status off
+
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${ProcessInfo} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep} #[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${ProcessInfo} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep} "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep} #[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep} #[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${ProcessInfo} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+
+# add mux counter
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]#( . ${gitlab_mux_counter})#( . ${github_mux_counter})  "
+
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${ProcessInfo} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+
+# gitlab + github together
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+
+# gitlab + github separated
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator} ${pidFg}${ProcessID} #[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}${topSecondBlock}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]#( . ${gitlab_mux_counter})#[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}#[fg=${vcsBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${vcsBG},bold]#( . ${github_mux_counter})#[fg=${vcsBG},bg=default,nobold]${active_term_right_sep}  "
+
+# Add ssh key checker
+# set -g pane-border-format " #[fg=${active_pane_bubble_bg1}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg1},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${active_pane_bubble_bg1},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]${separator}#( . ${sshKey_counter} )#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${gitlab_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}#[fg=${active_pane_bubble_bg2}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${active_pane_bubble_bg2},bold]#( . ${github_mux_counter})#[fg=${active_pane_bubble_bg2},bg=default,nobold]${active_term_right_sep}  "
+
+# Componentizing top bar
+# set -g pane-border-format "#[align=left]xx#[align=right]yy"
+set -g pane-border-format "  #[align=left]${topFirstBlock}${topThirdBlock}${topFourthBlock}${topTabStop}  "
+# set -g pane-border-format "  #[align=left]${topFirstBlock}${topThirdBlock}${topFourthBlock}#[align=right]${topTabStop}   ${topSecondBlock} "
+set -g pane-border-lines heavy
+
+
+# Active pane border
+set -g pane-active-border-style "fg=#{?pane_in_mode,colour196,#{?synchronize-panes,${sync_fg},${activeBorderFg}}}"
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour39
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=colour39,fg=${black}
+
+# Command message
+set -g message-command-style bg=colour233,fg=${black}
+
+# Mode
+set -g mode-style bg=colour39,fg=colour232
+

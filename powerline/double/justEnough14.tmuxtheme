@@ -230,7 +230,10 @@ ws_fg="#a20aa2"
 # wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
 wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv} "
 
-set -g status-right "${pomodoroComp}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
+
+# Adding Enzo
+# set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
+set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
 
 
 # ---------------------------------
@@ -284,6 +287,7 @@ fourthBG=${darkerBG}
 
 github="#{E:githubCounter}"
 gitlab="#{E:gitlabCounter}"
+enzo="#{E:enzoComponent}"
 
 topFirstBlock="#[fg=${firstBG}]${active_term_left_sep_inv}#[fg=${pane_active_bubble_fg},bg=${firstBG},bold]${separator} #[fg=${sessionGlyphFg}]${sessionGlyph} #[fg=${pane_index_fg}]#S#[fg=colour160,bold]  #[fg=${firstBG},bg=default,nobold]${active_term_right_sep_inv}"
 # topSecondBlock="#[fg=${secondBG}]${active_term_left_sep} #[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep}"
@@ -296,6 +300,7 @@ topSecondBlock="${pidFg}${ProcessID} "
 # topSecondBlock="#[fg=${secondBG}]${active_term_left_sep_inv}#[fg=${pane_active_bubble_fg},bg=${secondBG},bold]${separator} ${pidFg}${ProcessID} #[fg=${secondBG},bg=default,nobold]${active_term_right_sep_inv}"
 topThirdBlock="#[fg=${pane_active_bubble_fg},bold]${gitlab}"
 topFourthBlock="#[fg=${pane_active_bubble_fg}]${github}"
+# enzoCompBlock="#[fg=${pane_active_bubble_fg}]${enzo}"
 topTabStop=""
 
 # Experimenting w/ top bar status

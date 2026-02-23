@@ -228,12 +228,6 @@ pomodoroComp="#[fg=${tmux_fg},bg=default,bold]#{pomodoro_status} "
 # ws_fg="#767600"
 ws_fg="#a20aa2"
 # wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv}"
-wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv} "
-
-
-# Adding Enzo
-# set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
-set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
 
 
 # ---------------------------------
@@ -302,6 +296,12 @@ topThirdBlock="#[fg=${pane_active_bubble_fg},bold]${gitlab}"
 topFourthBlock="#[fg=${pane_active_bubble_fg}]${github}"
 # enzoCompBlock="#[fg=${pane_active_bubble_fg}]${enzo}"
 topTabStop=""
+wsComp="${topFourthBlock}${topThirdBlock} #[fg=${time_bg},bg=default]${active_term_left_sep_inv}#[bg=${time_bg}] #[fg=#fe0000,bg=${time_bg},bold]#[fg=${ws_fg},bold]#S#[fg=${time_m},bold]#[bg=${time_bg}] #[fg=${time_bg},bg=default]${active_term_right_sep_inv} "
+
+
+# Adding Enzo
+# set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
+set -g status-right "${pomodoroComp}${enzo}${tpmComp}${fzfComp}${zshComp}${masonComp}${zapComp}${pyrightComp}${pythonComp}${nodejsComp}${nodecounterComp}${nvimComp}${wsComp}"
 
 # Experimenting w/ top bar status
 # topThirdBlock=""
@@ -336,7 +336,9 @@ set -g pane-border-status off
 
 # Componentizing top bar
 # set -g pane-border-format "#[align=left]xx#[align=right]yy"
-set -g pane-border-format "  #[align=left]${topFirstBlock}${topThirdBlock}${topFourthBlock}${topTabStop}  "
+# set -g pane-border-format "  #[align=left]${topFirstBlock}${topThirdBlock}${topFourthBlock}${topTabStop}  "
+
+set -g pane-border-format " xyz"
 # set -g pane-border-format "  #[align=left]${topFirstBlock}${topThirdBlock}${topFourthBlock}#[align=right]${topTabStop}   ${topSecondBlock} "
 set -g pane-border-lines heavy
 

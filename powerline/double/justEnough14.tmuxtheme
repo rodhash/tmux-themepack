@@ -78,7 +78,7 @@ sessionGlyphFg=#fe8021
 
 # {{{ No extra spacing?
 arrowUpInactive='' # 󰬭 ⇪ ﬕ   󰹍 
-arrowUpActive='ﬕ' #  󰬬 ⇧ ﬕ  󰧥  
+arrowUpActive='' #  󰬬 ⇧ ﬕ  󰧥  
 pre_index_fg_style='' #   ﭲ ﲵ 
 
 
@@ -127,7 +127,7 @@ active_icon_fg=#7b00c6
 blk1_icon_b_fg=#fe0000
 inactive_icon_fg=#3b0001
 curr_up_arrow_fg=#ff7f50
-active_bubble_bg=#930003
+active_bubble_bg=#4e5008
 active_pane_bubble_bg1=#3b0000
 # active_pane_bubble_bg2=#121212
 # vcsBG="#101010"
